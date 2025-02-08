@@ -21,7 +21,7 @@
     </view>
     <view class="input-group">
       <text class="label">重复密码：</text>
-      <input name="confirmPassword" type="password" placeholder="请输入密码" />
+      <input name="confirmPassword" type="password" placeholder="请重复密码" />
     </view>
     <button formType="submit">注册</button>
   </form>
