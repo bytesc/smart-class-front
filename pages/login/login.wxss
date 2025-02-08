@@ -1,0 +1,66 @@
+/* pages/login/login.wxss */
+
+/* pages/register/register.wxss */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.title-image {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+.title-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.registerForm {
+  width: 100%;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+.label {
+  font-size: 16px;
+  margin-bottom: 1px;
+  color: #666;
+}
+
+input {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  background-color: #007aff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 18px;
+  margin-top: 40px;
+}
+
+button:active {
+  background-color: #005fcc;
+}

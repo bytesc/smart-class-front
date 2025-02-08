@@ -1,0 +1,27 @@
+<!--pages/login/login.wxml-->
+<!-- <text>pages/login/login.wxml</text> -->
+
+<!--pages/register/register.wxml-->
+<!-- <text>pages/register/register.wxml</text> -->
+
+<view class="container">
+
+<view class="title-container">
+  <image class="title-image" src="/static/images/logo.jpg"></image>
+  <text class="title-text">智慧班级</text>
+</view>
+
+<form bindsubmit="onLoginForm" class="LoginForm">
+  <view class="input-group">
+    <text class="label">手机号：</text>
+    <input name="uid" type="number" placeholder="请输入手机号" />
+  </view>
+
+  <view class="input-group">
+    <text class="label">密码：</text>
+    <input name="password" type="password" placeholder="请输入密码" />
+  </view>
+
+  <button formType="submit">登录</button>
+</form>
+</view>

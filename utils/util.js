@@ -28,9 +28,23 @@ const request = (url, method, data = {}) => {
       success(res) {
         // 成功处理
         if (res.statusCode === 200) {
-          resolve(res.data);
+          if (res.data.code == 200){
+            resolve(res.data);
+          }else{
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 2000
+            })
+            resolve(res.data);
+          }
         } else {
           reject(res.data);
+          wx.showToast({
+            title: "请求失败",
+            icon: 'none',
+            duration: 2000
+          })
         }
       },
       fail(err) {

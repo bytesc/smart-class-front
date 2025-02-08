@@ -1,4 +1,4 @@
-// pages/register/register.js
+// pages/login/login.js
 import utils from '../../utils/util.js';
 let md5 = require('md5')
 
@@ -11,32 +11,14 @@ Page({
 
   },
 
-  onRegisterForm: function(e) {
-    let { uid, username, email, password, confirmPassword } = e.detail.value;
+  onLoginForm: function(e) {
+    let {uid, password} = e.detail.value;
     const method = 'POST';
 
-     // 验证用户名长度
-  if (username.length < 3 || username.length > 50) {
-    wx.showToast({
-      title: '用户名长度必须在3到50个字符之间',
-      icon: 'none',
-      duration: 2000
-    });
-    return;
-  }
   // 验证手机号码长度
   if (uid.length != 11) {
     wx.showToast({
       title: '手机号码长度必须等于11位',
-      icon: 'none',
-      duration: 2000
-    });
-    return;
-  }
-  // 验证两次输入的密码是否一致
-  if (password !== confirmPassword) {
-    wx.showToast({
-      title: '两次输入的密码不一致',
       icon: 'none',
       duration: 2000
     });
@@ -53,14 +35,15 @@ Page({
   }
 
     password =  md5(password);
-    const data = { uid, username, email, password };
-    const url = "/register"
+    const data = { uid, password };
+    const url = "/login"
     utils.request(url, method, data)
       .then(res => {
+        
         console.log(res)
         if(res.code===200){
           wx.showToast({
-            title: '注册成功',
+            title: '登录成功',
             icon: 'success',
             duration: 2000
           });
@@ -71,12 +54,12 @@ Page({
             duration: 2000
           });
         }
+
       })
       .catch(err => {
-        // 注册失败处理
+
       });
   },
-
 
   /**
    * 生命周期函数--监听页面加载

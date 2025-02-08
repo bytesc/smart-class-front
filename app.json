@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/register/register"
+    "pages/register/register",
+    "pages/login/login"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -13,5 +14,4 @@
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents"
-
 }
