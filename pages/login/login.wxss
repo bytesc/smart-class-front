@@ -1,7 +1,5 @@
 /* pages/login/login.wxss */
 
-/* pages/register/register.wxss */
-
 .container {
   display: flex;
   flex-direction: column;
@@ -27,7 +25,7 @@
   color: #333;
 }
 
-.registerForm {
+.LoginForm {
   width: 100%;
 }
 
@@ -63,4 +61,22 @@ button {
 
 button:active {
   background-color: #005fcc;
+}
+
+
+
+.register-link {
+  margin-top: 20px; /* 在登录按钮下方添加一些空间 */
+  text-align: center; /* 将文字居中显示 */
+}
+
+.register-link navigator {
+  color: #007aff; /* 设置链接文字颜色 */
+  text-decoration: none; /* 移除下划线 */
+  font-size: 16px; /* 设置字体大小 */
+}
+
+/* 当用户点击链接时改变颜色 */
+.register-link navigator:active {
+  color: #005fcc;
 }

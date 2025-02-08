@@ -16,6 +16,8 @@ App({
   },
   globalData: {
     userInfo: null,
-    serverUrl: "http://127.0.0.1:8001/api" 
+    token: null,
+    serverUrl: "http://127.0.0.1:8001/api" ,
+    
   }
 })

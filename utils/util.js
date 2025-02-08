@@ -18,6 +18,9 @@ const request = (url, method, data = {}) => {
   return new Promise((resolve, reject) => {
     const app = getApp();
     const serverUrl = app.globalData.serverUrl;
+    const token = app.globalData.token;
+    data.token = token;
+    console.log(data)
     wx.request({
       url: serverUrl + url, // 服务器url
       method: method, // 请求方法

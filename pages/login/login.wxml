@@ -24,4 +24,8 @@
 
   <button formType="submit">登录</button>
 </form>
+
+<view class="register-link">
+    <navigator url="/pages/register/register">还没有账号？立即注册</navigator>
+</view>
 </view>

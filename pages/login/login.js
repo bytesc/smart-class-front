@@ -47,6 +47,14 @@ Page({
             icon: 'success',
             duration: 2000
           });
+          const userinfo = {
+            uid: res.data.uid,
+            username: res.data.username,
+            email: res.data.email
+          };
+          const token = res.data.token
+          wx.setStorageSync('userinfo', userinfo);
+          wx.setStorageSync('token', token);
         }else{
           wx.showToast({
             title: res.msg,
