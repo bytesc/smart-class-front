@@ -2,7 +2,13 @@
 <!-- <text>pages/register/register.wxml</text> -->
 
 <view class="container">
-  <form bindsubmit="onRegisterForm">
+
+  <view class="title-container">
+    <image class="title-image" src="/static/images/logo.jpg"></image>
+    <text class="title-text">智慧班级</text>
+  </view>
+
+  <form bindsubmit="onRegisterForm" class="registerForm">
     <view class="input-group">
       <text class="label">手机号：</text>
       <input name="uid" type="number" placeholder="请输入手机号" />
