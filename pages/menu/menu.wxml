@@ -1,0 +1,26 @@
+<!--pages/menu.wxml-->
+<!-- <text>pages/menu.wxml</text> -->
+<view class="menu-container">
+
+  <view>
+    <navigator class="menu-item" url="/pages/class-stu/class-stu">
+      <image class="menu-item-icon" src="/static/images/icons/class.png"></image>
+      <view class="menu-item-text">我的班级</view>
+    </navigator>
+  </view>
+
+  <view>
+    <navigator class="menu-item" url="">
+      <image class="menu-item-icon" src="/static/images/icons/lesson.png"></image>
+      <view class="menu-item-text">我的课程</view>
+    </navigator>
+  </view>
+
+  <view>
+    <navigator class="menu-item" url="">
+      <image class="menu-item-icon" src="/static/images/icons/政策2.png"></image>
+      <view class="menu-item-text">学校政策</view>
+    </navigator>
+  </view>
+
+</view>

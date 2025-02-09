@@ -3,7 +3,10 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/register/register",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/mine/mine",
+    "pages/home/home",
+    "pages/menu/menu"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -13,5 +16,29 @@
   "style": "v2",
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents"
+  "lazyCodeLoading": "requiredComponents",
+
+  "tabBar": {
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "static/images/icons/home.png",
+        "selectedIconPath": "static/images/icons/home_s.png"
+      },
+      {
+        "pagePath": "pages/menu/menu",
+        "text": "菜单",
+        "iconPath": "static/images/icons/menu.png",
+        "selectedIconPath": "static/images/icons/menu_s.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "static/images/icons/mine.png",
+        "selectedIconPath": "static/images/icons/mine_s.png"
+      }
+    ]
+  }
 }

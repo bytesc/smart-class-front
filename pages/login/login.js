@@ -54,6 +54,9 @@ Page({
           const token = res.data.token
           wx.setStorageSync('userinfo', userinfo);
           wx.setStorageSync('token', token);
+          wx.switchTab({
+            url: '/pages/menu/menu',
+          })
         }else{
           wx.showToast({
             title: res.msg,

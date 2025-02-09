@@ -1,0 +1,35 @@
+/* pages/menu.wxss */
+page{
+  height: 100%;
+  background-color: #F5F5F5;
+  border-top: 1rpx solid #DDD;
+}
+
+.menu-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.menu-item{
+  width: 49vw;
+  border: 0.25vw solid #DDD;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80rpx 0rpx 80rpx 0rpx;
+}
+
+.menu-item-icon{
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.menu-item-text{
+  margin-top: 30rpx;
+}
+
+
+

@@ -33,6 +33,13 @@ const request = (url, method, data = {}) => {
         // 成功处理
         if (res.statusCode === 200) {
           if (res.data.code == 200){
+            if (res.data.msg != ""){
+              wx.showToast({
+                title: res.data.msg,
+                icon: 'success',
+                duration: 2000
+              })
+            }
             resolve(res.data);
           }else{
             wx.showToast({

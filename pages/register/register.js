@@ -59,10 +59,9 @@ Page({
       .then(res => {
         console.log(res)
         if(res.code===200){
-          wx.showToast({
-            title: '注册成功',
-            icon: 'success',
-            duration: 2000
+          console.log("xx")
+          wx.redirectTo({
+            url: '/pages/login/login',
           });
         }else{
           wx.showToast({
