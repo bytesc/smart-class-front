@@ -39,7 +39,6 @@ Page({
     const url = "/login"
     utils.request(url, method, data)
       .then(res => {
-        
         console.log(res)
         if(res.code===200){
           wx.showToast({

@@ -15,42 +15,42 @@ Page({
     let { uid, username, email, password, confirmPassword } = e.detail.value;
     const method = 'POST';
 
-     // 验证用户名长度
-  if (username.length < 3 || username.length > 50) {
-    wx.showToast({
-      title: '用户名长度必须在3到50个字符之间',
-      icon: 'none',
-      duration: 2000
-    });
-    return;
-  }
-  // 验证手机号码长度
-  if (uid.length != 11) {
-    wx.showToast({
-      title: '手机号码长度必须等于11位',
-      icon: 'none',
-      duration: 2000
-    });
-    return;
-  }
-  // 验证两次输入的密码是否一致
-  if (password !== confirmPassword) {
-    wx.showToast({
-      title: '两次输入的密码不一致',
-      icon: 'none',
-      duration: 2000
-    });
-    return;
-  }
-  // 验证密码长度
-  if (password.length < 6) {
-    wx.showToast({
-      title: '密码长度不能小于6位',
-      icon: 'none',
-      duration: 2000
-    });
-    return;
-  }
+      // 验证用户名长度
+    if (username.length < 1 || username.length > 50) {
+      wx.showToast({
+        title: '用户名长度必须在1到50个字符之间',
+        icon: 'none',
+        duration: 2000
+      });
+      return;
+    }
+    // 验证手机号码长度
+    if (uid.length != 11) {
+      wx.showToast({
+        title: '手机号码长度必须等于11位',
+        icon: 'none',
+        duration: 2000
+      });
+      return;
+    }
+    // 验证两次输入的密码是否一致
+    if (password !== confirmPassword) {
+      wx.showToast({
+        title: '两次输入的密码不一致',
+        icon: 'none',
+        duration: 2000
+      });
+      return;
+    }
+    // 验证密码长度
+    if (password.length < 6) {
+      wx.showToast({
+        title: '密码长度不能小于6位',
+        icon: 'none',
+        duration: 2000
+      });
+      return;
+    }
 
     password =  md5(password);
     const data = { uid, username, email, password };

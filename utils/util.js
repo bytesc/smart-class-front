@@ -19,12 +19,13 @@ const request = (url, method, data = {}) => {
     const app = getApp();
     const serverUrl = app.globalData.serverUrl;
     const token = app.globalData.token;
-    data.token = token;
-    console.log(data)
     wx.request({
       url: serverUrl + url, // 服务器url
       method: method, // 请求方法
-      data: data, // 请求参数
+      data: {
+        token: token,
+        payload: data
+      }, // 请求参数
       header: {
         'content-type': 'application/json' // 默认值
       },
