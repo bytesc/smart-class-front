@@ -59,16 +59,11 @@ Page({
       .then(res => {
         console.log(res)
         if(res.code===200){
-          console.log("xx")
           wx.redirectTo({
             url: '/pages/login/login',
           });
         }else{
-          wx.showToast({
-            title: res.msg,
-            icon: 'none',
-            duration: 2000
-          });
+
         }
       })
       .catch(err => {

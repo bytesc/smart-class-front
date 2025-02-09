@@ -14,20 +14,16 @@ const formatNumber = n => {
   return n[1] ? n : `0${n}`
 }
 
-const request = (url, method, data = {}) => {
+const request = (url, method, data) => {
   return new Promise((resolve, reject) => {
-    const app = getApp();
-    const serverUrl = app.globalData.serverUrl;
-    const token = app.globalData.token;
+    const serverUrl = "http://127.0.0.1:8001/api" 
     wx.request({
       url: serverUrl + url, // 服务器url
       method: method, // 请求方法
-      data: {
-        token: token,
-        payload: data
-      }, // 请求参数
+      data: data,
       header: {
-        'content-type': 'application/json' // 默认值
+        'content-type': 'application/json', // 默认值
+        "token": wx.getStorageSync('token')
       },
       success(res) {
         // 成功处理

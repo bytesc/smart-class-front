@@ -1,18 +1,43 @@
 // pages/mine/mine.js
+import utils from '../../utils/util.js';
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    userInfo: {}
+  },
 
+  getUserInfo: function(){
+    var userInfo = wx.getStorageSync('userInfo');
+    if (userInfo==""){
+      wx.redirectTo({
+        url: '/pages/login/login',
+      });
+    }else{
+      const url = "/userinfo/" + userInfo.uid
+      const method = 'POST'
+      let data = {}
+      utils.request(url, method, data)
+      .then(res => {
+        console.log(res)
+        this.setData({
+          userInfo: res.data
+        });
+      })
+      .catch(err => {
+        // 失败处理
+      });
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.getUserInfo()
   },
 
   /**
@@ -47,7 +72,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-
+    this.getUserInfo()
   },
 
   /**

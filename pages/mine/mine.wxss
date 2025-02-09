@@ -1,1 +1,33 @@
 /* pages/mine/mine.wxss */
+
+/* userProfile.wxss */
+.container {
+  padding: 20px;
+}
+
+.userinfo {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.userinfo-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.userinfo-item {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.userinfo-label {
+  width: 80px;
+  font-size: 16px;
+}
+
+.userinfo-value {
+  font-size: 16px;
+}

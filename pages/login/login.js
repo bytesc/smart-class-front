@@ -52,17 +52,13 @@ Page({
             email: res.data.email
           };
           const token = res.data.token
-          wx.setStorageSync('userinfo', userinfo);
+          wx.setStorageSync('userInfo', userinfo);
           wx.setStorageSync('token', token);
           wx.switchTab({
             url: '/pages/menu/menu',
           })
         }else{
-          wx.showToast({
-            title: res.msg,
-            icon: 'none',
-            duration: 2000
-          });
+
         }
 
       })
