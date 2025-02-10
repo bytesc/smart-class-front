@@ -28,6 +28,10 @@ const request = (url, method, data) => {
       success(res) {
         // 成功处理
         if (res.statusCode === 200) {
+          if (res.header['new-token']) {
+            let token = res.header["new-token"]
+            wx.setStorageSync('token', token);
+          }
           if (res.data.code == 200){
             if (res.data.msg != ""){
               wx.showToast({
