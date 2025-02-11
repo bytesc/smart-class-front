@@ -1,0 +1,60 @@
+/* pages/my-class/my-class.wxss */
+
+/* pages/my-class/my-class.wxss */
+.my-class-top-bar{
+  height: 240rpx;
+  background-color: #04BE02;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.my-class-top-bar-text{
+  padding-bottom: 30rpx;
+  color: white;
+  font-size: large;
+  font-weight: 600;
+}
+.my-class-top-bar-num{
+  color: white;
+}
+
+
+.my-class-teacher-bar{
+  height: 80rpx;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+.my-class-teacher-bar:hover{
+  background-color: #DDD;
+}
+.my-class-teacher-text{
+  margin-left: 15px;
+  color: gray;
+}
+
+
+.my-class-list{
+  display: flex;
+  flex-direction: column;
+}
+.my-class-list-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 60rpx;
+  border-bottom: 1rpx solid #DDD;
+}
+.my-class-list-row:hover{
+  background-color: #f5f5f5;
+}
+.my-class-list-colum{
+  width: 100%;
+  text-align: center;
+}
+
+

@@ -48,7 +48,7 @@ Page({
           });
           const userinfo = res.data
           console.log(res.data)
-          wx.setStorageSync('userInfo', userinfo);
+          wx.setStorageSync('userinfo', userinfo);
           wx.switchTab({
             url: '/pages/menu/menu',
           })

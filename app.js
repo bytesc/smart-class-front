@@ -16,7 +16,8 @@ App({
   },
   globalData: {
     logs:"",
-    userInfo: "",
+    userinfo: "",
     token: "",
+    cur_class:""
   }
 })

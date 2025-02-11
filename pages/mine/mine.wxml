@@ -12,46 +12,46 @@
     </view>
     <view class="userinfo-item">
       <text class="userinfo-label">手机号：</text>
-      <text class="userinfo-value">{{userInfo.uid ? userInfo.uid : ''}}</text>
+      <text class="userinfo-value">{{userinfo.uid ? userinfo.uid : ''}}</text>
     </view>
     <view class="userinfo-item">
       <text class="userinfo-label">用户名：</text>
-      <text class="userinfo-value">{{userInfo.username ? userInfo.username : ''}}</text>
+      <text class="userinfo-value">{{userinfo.username ? userinfo.username : ''}}</text>
     </view>
     <view class="userinfo-item">
       <text class="userinfo-label">邮箱：</text>
-      <text class="userinfo-value">{{userInfo.email ? userInfo.email : ''}}</text>
+      <text class="userinfo-value">{{userinfo.email ? userinfo.email : ''}}</text>
     </view>
 
     <!-- 学生信息 -->
-    <block wx:if="{{userInfo.stu_info}}">
+    <block wx:if="{{userinfo.stu_info}}">
       <view class="userinfo-item">
         <text class="userinfo-label">学号：</text>
-        <text class="userinfo-value">{{userInfo.stu_info.stu_num ? userInfo.stu_info.stu_num : ''}}</text>
+        <text class="userinfo-value">{{userinfo.stu_info.stu_num ? userinfo.stu_info.stu_num : ''}}</text>
       </view>
       <view class="userinfo-item">
         <text class="userinfo-label">专业：</text>
-        <text class="userinfo-value">{{userInfo.stu_info.major ? userInfo.stu_info.major : ''}}</text>
+        <text class="userinfo-value">{{userinfo.stu_info.major ? userinfo.stu_info.major : ''}}</text>
       </view>
       <view class="userinfo-item">
         <text class="userinfo-label">学生职位：</text>
-        <text class="userinfo-value">{{userInfo.stu_info.stu_position ? userInfo.stu_info.stu_position : ''}}</text>
+        <text class="userinfo-value">{{userinfo.stu_info.stu_position ? userinfo.stu_info.stu_position : ''}}</text>
       </view>
       <view class="userinfo-item">
         <text class="userinfo-label">班级名称：</text>
-        <text class="userinfo-value">{{userInfo.stu_info.class_name ? userInfo.stu_info.class_name : ''}}</text>
+        <text class="userinfo-value">{{userinfo.stu_info.class_name ? userinfo.stu_info.class_name : ''}}</text>
       </view>
     </block>
 
     <!-- 教师信息 -->
-    <block wx:if="{{userInfo.teacher_info}}">
+    <block wx:if="{{userinfo.teacher_info}}">
       <view class="userinfo-item">
         <text class="userinfo-label">教师工号：</text>
-        <text class="userinfo-value">{{userInfo.teacher_info.teacher_num ? userInfo.teacher_info.teacher_num : ''}}</text>
+        <text class="userinfo-value">{{userinfo.teacher_info.teacher_num ? userinfo.teacher_info.teacher_num : ''}}</text>
       </view>
     </block>
 
-    <!-- <block wx:if="{{!userInfo.stu_info && !userInfo.teacher_info}}">
+    <!-- <block wx:if="{{!userinfo.stu_info && !userinfo.teacher_info}}">
       <view class="stu-info-link">
           <navigator url="/pages/register/register">填写学生信息</navigator>
       </view>

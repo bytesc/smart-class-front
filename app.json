@@ -7,7 +7,8 @@
     "pages/mine/mine",
     "pages/home/home",
     "pages/menu/menu",
-    "pages/new_stu/new_stu"
+    "pages/new_stu/new_stu",
+    "pages/my-class/my-class"
   ],
   "window": {
     "navigationBarTextStyle": "black",

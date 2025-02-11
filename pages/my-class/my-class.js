@@ -1,4 +1,4 @@
-// pages/mine/mine.js
+// pages/my-class/my-class.js
 import utils from '../../utils/util.js';
 
 Page({
@@ -7,37 +7,55 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userinfo: {}
+    class_name:"",
+    class_data:""
   },
 
   getUserInfo: function(){
-    var userinfo = wx.getStorageSync('userinfo');
-    if (userinfo==""){
-      wx.redirectTo({
-        url: '/pages/login/login',
-      });
-    }else{
-      const url = "/userinfo/" + userinfo.uid
-      const method = 'POST'
+    if(this.data.class_name != ""){
+      let url = "/my-class/" + this.data.class_name
+      let method = "POST"
       let data = {}
       utils.request(url, method, data)
       .then(res => {
         console.log(res)
         this.setData({
-          userinfo: res.data
+          class_data: res.data
         });
+        // console.log(this.data.class_data)
       })
       .catch(err => {
         // 失败处理
       });
     }
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this.getUserInfo()
+    if (userinfo==""){
+      wx.redirectTo({
+        url: '/pages/login/login',
+      });
+    }
+    let userinfo = wx.getStorageSync("userinfo")
+    if (userinfo.stu_info && userinfo.stu_info.class_name){
+      this.setData({
+        class_name: userinfo.stu_info.class_name
+      });
+      // console.log(this.data.class_name)
+      this.getUserInfo()
+    }
+    // if (userinfo.teacher_info && userinfo.stu_info.class_name){
+    //   this.setData({
+    //     class_name: userinfo.stu_info.class_name
+    //   });
+    //   // console.log(this.data.class_name)
+    //   this.getUserInfo()
+    // }
+    
   },
 
   /**
