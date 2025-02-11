@@ -1,33 +1,82 @@
-/* pages/mine/mine.wxss */
+/* mine.wxss */
 
-/* userProfile.wxss */
 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5f5f5;
   padding: 20px;
 }
 
 .userinfo {
+  width: 100%;
   background-color: #ffffff;
-  padding: 15px;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
 .userinfo-title {
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 10px;
+  color: #333333;
+  margin-bottom: 20px;
 }
 
 .userinfo-item {
   display: flex;
+  align-items: center;
   margin-bottom: 10px;
 }
 
 .userinfo-label {
   width: 80px;
   font-size: 16px;
+  color: #666666;
 }
 
 .userinfo-value {
   font-size: 16px;
+  color: #333333;
+}
+
+.stu-info-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.stu-info-link navigator {
+  color: #007aff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* 针对块级元素的学生信息和教师信息 */
+block {
+  margin-top: 20px;
+}
+
+/* 添加一些过渡效果 */
+.userinfo-item,
+.userinfo-title {
+  transition: all 0.3s ease;
+}
+
+/* .userinfo-item:hover,
+.userinfo-title:hover {
+  transform: scale(1.02);
+} */
+
+
+.userinfo-avatar {
+  display: flex;
+  justify-content: center; /* 水平居中头像 */
+  margin-bottom: 20px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }

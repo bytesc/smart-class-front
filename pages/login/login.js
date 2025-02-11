@@ -36,7 +36,7 @@ Page({
 
     password =  md5(password);
     const data = { uid, password };
-    const url = "/login"
+    const url = "/login/"
     utils.request(url, method, data)
       .then(res => {
         console.log(res)
@@ -46,14 +46,9 @@ Page({
             icon: 'success',
             duration: 2000
           });
-          const userinfo = {
-            uid: res.data.uid,
-            username: res.data.username,
-            email: res.data.email
-          };
-          const token = res.data.token
+          const userinfo = res.data
+          console.log(res.data)
           wx.setStorageSync('userInfo', userinfo);
-          wx.setStorageSync('token', token);
           wx.switchTab({
             url: '/pages/menu/menu',
           })

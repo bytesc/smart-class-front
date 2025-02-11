@@ -54,7 +54,7 @@ Page({
 
     password =  md5(password);
     const data = { uid, username, email, password };
-    const url = "/register"
+    const url = "/register/"
     utils.request(url, method, data)
       .then(res => {
         console.log(res)

@@ -6,7 +6,8 @@
     "pages/login/login",
     "pages/mine/mine",
     "pages/home/home",
-    "pages/menu/menu"
+    "pages/menu/menu",
+    "pages/new_stu/new_stu"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -17,7 +18,6 @@
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents",
-
   "tabBar": {
     "position": "bottom",
     "list": [
