@@ -57,5 +57,9 @@
       </view>
     </block> -->
 
+    <view class="logout-button">
+      <button class="logout-btn" bindtap="handleLogout">退出登录</button>
+    </view>
+
   </view>
 </view>

@@ -8,7 +8,7 @@ Page({
    */
   data: {
     role:"",
-    userinfo:"",
+    userinfo:{},
     classList:"",
     currentClass: { name: '请选择班级', id: '' }
   },
@@ -23,7 +23,7 @@ Page({
   },
 
   getTeacherClassList: function() {
-    if (userinfo==""){
+    if (this.data.userinfo==""){
       wx.redirectTo({
         url: '/pages/login/login',
       });

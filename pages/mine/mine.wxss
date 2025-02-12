@@ -80,3 +80,19 @@ block {
   height: 100px;
   border-radius: 50%;
 }
+
+
+.logout-button {
+  margin-top: 50px; /* 按钮与上方内容的间距 */
+}
+
+.logout-btn {
+  width: 100%; /* 按钮宽度占满容器 */
+  padding: 10px; /* 按钮内边距 */
+  background-color: #ff4d4f; /* 按钮背景颜色 */
+  color: #ffffff; /* 按钮文字颜色 */
+  border: none; /* 无边框 */
+  border-radius: 4px; /* 按钮圆角 */
+  text-align: center; /* 文字居中 */
+  font-size: 16px; /* 文字大小 */
+}

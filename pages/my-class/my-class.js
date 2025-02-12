@@ -13,6 +13,11 @@ Page({
   },
 
   getClassInfo: function(){
+    if (this.data.userinfo==""){
+      wx.redirectTo({
+        url: '/pages/login/login',
+      });
+    }
     if(this.data.className != ""){
       let url = "/my-class/" + this.data.className
       let method = "POST"
@@ -35,17 +40,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    if (userinfo==""){
-      wx.redirectTo({
-        url: '/pages/login/login',
-      });
-    }
     let userinfo = wx.getStorageSync("userinfo")
     let className = wx.getStorageSync("curClass")
     this.setData({
       className: className,
       userinfo: userinfo
     })
+
 
     this.getClassInfo()
   

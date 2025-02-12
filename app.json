@@ -1,13 +1,12 @@
 {
   "pages": [
+    "pages/login/login",
+    "pages/register/register",
+    "pages/menu/menu",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/register/register",
-    "pages/login/login",
     "pages/mine/mine",
     "pages/home/home",
-    "pages/menu/menu",
-    "pages/new_stu/new_stu",
     "pages/my-class/my-class"
   ],
   "window": {

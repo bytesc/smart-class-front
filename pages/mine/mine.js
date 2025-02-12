@@ -33,6 +33,22 @@ Page({
   //   }
   // },
 
+  handleLogout : function(e){
+    wx.setStorageSync("userinfo","")
+    wx.setStorageSync("token","")
+    wx.setStorageSync("curClass","")
+
+    wx.showToast({
+      title: "已退出登录",
+      icon: 'success',
+      duration: 2000
+    })
+
+    wx.redirectTo({
+      url: '/pages/login/login',
+    });
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -41,6 +57,11 @@ Page({
     this.setData({
       userinfo: userinfo
     });
+    if (userinfo==""){
+      wx.redirectTo({
+        url: '/pages/login/login',
+      });
+    }
   },
 
   /**
@@ -79,6 +100,11 @@ Page({
     this.setData({
       userinfo: userinfo
     });
+    if (userinfo==""){
+      wx.redirectTo({
+        url: '/pages/login/login',
+      });
+    }
   },
 
   /**
