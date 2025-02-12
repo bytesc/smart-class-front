@@ -75,7 +75,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.onLoad();
   },
 
   /**
@@ -96,15 +96,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-    let userinfo = wx.getStorageSync("userinfo")
-    this.setData({
-      userinfo: userinfo
-    });
-    if (userinfo==""){
-      wx.redirectTo({
-        url: '/pages/login/login',
-      });
-    }
+    this.onLoad();
   },
 
   /**

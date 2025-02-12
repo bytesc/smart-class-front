@@ -67,18 +67,23 @@ Page({
     this.setData({
       userinfo: userinfo
     });
+    
     if(userinfo.teacher_info){
       this.setData({
         role: "teacher"
       });
       this.getTeacherClassList()
     }
-    if(userinfo.stu_info){
+    else if(userinfo.stu_info){
       this.setData({
         role: "stu"
       });
     }
-    
+    else{
+      this.setData({
+        role: ""
+      });
+    }
 
   },
 
@@ -93,7 +98,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.onLoad();
   },
 
   /**
@@ -114,21 +119,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-    let userinfo = wx.getStorageSync("userinfo")
-    this.setData({
-      userinfo: userinfo
-    })
-    if(userinfo.teacher_info){
-      this.setData({
-        role: "teacher"
-      });
-      this.getTeacherClassList()
-    }
-    if(userinfo.stu_info){
-      this.setData({
-        role: "stu"
-      });
-    }
+    this.onLoad();
+
   },
 
   /**
