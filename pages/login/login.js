@@ -49,6 +49,11 @@ Page({
           const userinfo = res.data
           console.log(res.data)
           wx.setStorageSync('userinfo', userinfo);
+          if (userinfo.stu_info && userinfo.stu_info.class_name){
+            wx.setStorageSync('curClass', userinfo.stu_info.class_name);
+          }
+
+
           wx.switchTab({
             url: '/pages/menu/menu',
           })

@@ -10,34 +10,37 @@ Page({
     userinfo: {}
   },
 
-  getUserInfo: function(){
-    var userinfo = wx.getStorageSync('userinfo');
-    if (userinfo==""){
-      wx.redirectTo({
-        url: '/pages/login/login',
-      });
-    }else{
-      const url = "/userinfo/" + userinfo.uid
-      const method = 'POST'
-      let data = {}
-      utils.request(url, method, data)
-      .then(res => {
-        console.log(res)
-        this.setData({
-          userinfo: res.data
-        });
-      })
-      .catch(err => {
-        // 失败处理
-      });
-    }
-  },
+  // getUserInfo: function(){
+  //   var userinfo = wx.getStorageSync('userinfo');
+  //   if (userinfo==""){
+  //     wx.redirectTo({
+  //       url: '/pages/login/login',
+  //     });
+  //   }else{
+  //     const url = "/userinfo/" + userinfo.uid
+  //     const method = 'POST'
+  //     let data = {}
+  //     utils.request(url, method, data)
+  //     .then(res => {
+  //       console.log(res)
+  //       this.setData({
+  //         userinfo: res.data
+  //       });
+  //     })
+  //     .catch(err => {
+  //       // 失败处理
+  //     });
+  //   }
+  // },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this.getUserInfo()
+    let userinfo = wx.getStorageSync("userinfo")
+    this.setData({
+      userinfo: userinfo
+    });
   },
 
   /**
@@ -72,7 +75,10 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-    this.getUserInfo()
+    let userinfo = wx.getStorageSync("userinfo")
+    this.setData({
+      userinfo: userinfo
+    });
   },
 
   /**

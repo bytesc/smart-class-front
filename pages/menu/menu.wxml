@@ -1,18 +1,33 @@
 <!--pages/menu.wxml-->
 <!-- <text>pages/menu.wxml</text> -->
+
+ 
+<view class="class-picker" wx:if="{{role === 'teacher'}}">
+    <picker mode="selector" range="{{classList}}" range-key="name"  bindchange="classChange">
+      <view class="picker-label">▼ 点击切换班级：{{currentClass.name }}</view>
+    </picker>
+</view>
+
 <view class="menu-container">
 
-  <view>
+  <view  wx:if="{{role === 'teacher' || role === 'stu'}}">
     <navigator class="menu-item" url="/pages/my-class/my-class">
       <image class="menu-item-icon" src="/static/images/icons/class.png"></image>
       <view class="menu-item-text">我的班级</view>
     </navigator>
   </view>
 
-  <view>
+  <view wx:if="{{ role === 'stu'}}">
     <navigator class="menu-item" url="">
-      <image class="menu-item-icon" src="/static/images/icons/lesson.png"></image>
-      <view class="menu-item-text">我的课程</view>
+      <image class="menu-item-icon" src="/static/images/icons/grade.png"></image>
+      <view class="menu-item-text">我的成绩</view>
+    </navigator>
+  </view>
+
+  <view wx:if="{{ role === 'teacher'}}">
+    <navigator class="menu-item" url="">
+      <image class="menu-item-icon" src="/static/images/icons/grade.png"></image>
+      <view class="menu-item-text">班级成绩</view>
     </navigator>
   </view>
 

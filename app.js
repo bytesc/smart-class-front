@@ -18,6 +18,6 @@ App({
     logs:"",
     userinfo: "",
     token: "",
-    cur_class:""
+    curClass:""
   }
 })

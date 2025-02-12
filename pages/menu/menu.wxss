@@ -32,5 +32,13 @@ page{
   margin-top: 10px;
 }
 
-
+.class-picker {
+  margin: 10px;
+  padding: 5px;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+}
+.picker-label {
+  font-size: 16px;
+}
 

@@ -3,14 +3,14 @@
 
 <view>
   <view class="my-class-top-bar">
-    <view class="my-class-top-bar-text">我的班级：{{class_name}}</view>
-    <view class="my-class-top-bar-num">共 {{class_data.stu_list.length}} 名学生</view>
+    <view class="my-class-top-bar-text">我的班级：{{className}}</view>
+    <view class="my-class-top-bar-num">共 {{classData.stu_list.length}} 名学生</view>
   </view>
   <view class="my-class-teacher-bar">
-    <view class="my-class-teacher-text">班导师：{{class_data.class_teacher_name}}</view>
+    <view class="my-class-teacher-text">班导师：{{classData.class_teacher_name}}</view>
   </view>
   <view class="my-class-list">
-    <view class="my-class-list-row" wx:for="{{class_data.stu_list}}" wx:key="index">
+    <view class="my-class-list-row" wx:for="{{classData.stu_list}}" wx:key="index">
       <view class="my-class-list-colum">{{item.stu_num}}</view>
       <view class="my-class-list-colum">{{item.username}}</view>
     </view>

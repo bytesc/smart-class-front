@@ -7,25 +7,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-    class_name:"",
-    class_data:""
+    userinfo:{},
+    className:"",
+    classData:""
   },
 
-  getUserInfo: function(){
-    if(this.data.class_name != ""){
-      let url = "/my-class/" + this.data.class_name
+  getClassInfo: function(){
+    if(this.data.className != ""){
+      let url = "/my-class/" + this.data.className
       let method = "POST"
       let data = {}
       utils.request(url, method, data)
       .then(res => {
         console.log(res)
         this.setData({
-          class_data: res.data
+          classData: res.data
         });
-        // console.log(this.data.class_data)
       })
       .catch(err => {
-        // 失败处理
+        console.log(err)
       });
     }
     
@@ -41,20 +41,14 @@ Page({
       });
     }
     let userinfo = wx.getStorageSync("userinfo")
-    if (userinfo.stu_info && userinfo.stu_info.class_name){
-      this.setData({
-        class_name: userinfo.stu_info.class_name
-      });
-      // console.log(this.data.class_name)
-      this.getUserInfo()
-    }
-    // if (userinfo.teacher_info && userinfo.stu_info.class_name){
-    //   this.setData({
-    //     class_name: userinfo.stu_info.class_name
-    //   });
-    //   // console.log(this.data.class_name)
-    //   this.getUserInfo()
-    // }
+    let className = wx.getStorageSync("curClass")
+    this.setData({
+      className: className,
+      userinfo: userinfo
+    })
+
+    this.getClassInfo()
+  
     
   },
 
@@ -90,7 +84,15 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-    this.getUserInfo()
+    let userinfo = wx.getStorageSync("userinfo")
+    let className = wx.getStorageSync("curClass")
+    this.setData({
+      className: className,
+      userinfo: userinfo
+    })
+
+    this.getClassInfo()
+    
   },
 
   /**
