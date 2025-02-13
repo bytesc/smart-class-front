@@ -1,47 +1,49 @@
+/* pages/my-grade/my-grade.wxss */
+
 /* pages/my-class/my-class.wxss */
 
 /* pages/my-class/my-class.wxss */
-.my-class-top-bar{
+.my-grade-top-bar{
   height: 120px;
-  background-color: #04BE02;
+  background-color: #f4ea2a;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.my-class-top-bar-text{
+.my-grade-top-bar-text{
   padding-bottom: 20px;
-  color: white;
+  color: #515151;
   font-size: large;
   font-weight: 600;
 }
-.my-class-top-bar-num{
-  color: white;
+.my-grade-top-bar-num{
+  color: #515151;
 }
 
 
-.my-class-teacher-bar{
-  height: 50px;
+/* .my-grade-teacher-bar{
+  height: 80px;
   background-color: #f5f5f5;
   display: flex;
   flex-direction: row;
   justify-content: left;
   align-items: center;
-}
-.my-class-teacher-bar:hover{
+} */
+/* .my-grade-teacher-bar:hover{
   background-color: #DDD;
 }
-.my-class-teacher-text{
+.my-grade-teacher-text{
   margin-left: 15px;
   color: gray;
-}
+} */
 
 
-.my-class-list{
+.my-grade-list{
   display: flex;
   flex-direction: column;
 }
-.my-class-list-row{
+.my-grade-list-row{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -49,10 +51,10 @@
   height: 40px;
   border-bottom: 1px solid #DDD;
 }
-.my-class-list-row:hover{
+.my-grade-list-row:hover{
   background-color: #f5f5f5;
 }
-.my-class-list-colum{
+.my-grade-list-colum{
   width: 100%;
   text-align: center;
 }

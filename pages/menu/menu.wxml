@@ -18,7 +18,7 @@
   </view>
 
   <view wx:if="{{ role === 'stu'}}">
-    <navigator class="menu-item" url="">
+    <navigator class="menu-item" url="/pages/my-grade/my-grade">
       <image class="menu-item-icon" src="/static/images/icons/grade.png"></image>
       <view class="menu-item-text">我的成绩</view>
     </navigator>

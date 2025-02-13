@@ -7,7 +7,8 @@
     "pages/logs/logs",
     "pages/mine/mine",
     "pages/home/home",
-    "pages/my-class/my-class"
+    "pages/my-class/my-class",
+    "pages/my-grade/my-grade"
   ],
   "window": {
     "navigationBarTextStyle": "black",

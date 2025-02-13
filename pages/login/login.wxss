@@ -66,7 +66,7 @@ button:active {
 
 
 .register-link {
-  margin-top: 20px; /* 在登录按钮下方添加一些空间 */
+  margin-top: 50px; /* 在登录按钮下方添加一些空间 */
   text-align: center; /* 将文字居中显示 */
 }
 

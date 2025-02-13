@@ -1,0 +1,23 @@
+<!--pages/my-grade/my-grade.wxml-->
+<!-- <text>pages/my-grade/my-grade.wxml</text> -->
+
+<!--pages/my-class/my-class.wxml-->
+<!-- <text>pages/my-class/my-class.wxml</text> -->
+
+<view>
+  <view class="my-grade-top-bar">
+    <view class="my-grade-top-bar-text">{{userinfo.username}}</view>
+    <view class="my-grade-top-bar-num">共 {{gradeData.stu_grade_list.length}} 条成绩</view>
+  </view>
+  <view class="my-grade-list">
+    <view class="my-grade-list-row" wx:for="{{gradeData.stu_grade_list}}" wx:key="index">
+      <view class="my-grade-list-colum">{{item.lesson_name}}</view>
+      <view class="my-grade-list-colum">{{item.semester}}</view>
+      <view class="my-grade-list-colum">{{item.grade}}</view>
+    </view>
+  </view>
+  
+</view>
+
+
+
