@@ -1,0 +1,21 @@
+<!--pages/class-grade/class-grade.wxml-->
+<!-- <text>pages/class-grade/class-grade.wxml</text> -->
+
+<view>
+  <view class="my-grade-top-bar">
+    <view class="my-grade-top-bar-text">{{className}}</view>
+    <view class="my-grade-top-bar-num">共 {{gradeData.class_grade_list.length}} 名学生</view>
+  </view>
+  <view class="my-grade-list">
+    
+      <view  wx:for="{{gradeData.class_grade_list}}" wx:key="index">
+        <navigator class="my-grade-list-row" url="/pages/my-grade/my-grade?uid={{item.uid}}&username={{item.username}}">
+          <view class="my-grade-list-colum">{{item.stu_num}}</view>
+          <view class="my-grade-list-colum">{{item.username}}</view>
+          <view class="my-grade-list-colum">{{item.avg_grade}}</view>
+        </navigator>
+      </view>
+    
+  </view>
+  
+</view>

@@ -1,4 +1,4 @@
-/* pages/my-grade/my-grade.wxss */
+/* pages/class-grade/class-grade.wxss */
 
 .my-grade-top-bar{
   height: 120px;

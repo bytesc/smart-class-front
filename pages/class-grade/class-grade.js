@@ -1,4 +1,4 @@
-// pages/my-grade/my-grade.js
+// pages/class-grade/class-grade.js
 import utils from '../../utils/util.js';
 
 Page({
@@ -9,17 +9,16 @@ Page({
   data: {
     userinfo:{},
     className:"",
-    gradeData:"",
-    username:""
+    gradeData:""
   },
 
-  getGradeList: function(uid){
+  getGradeList: function(className){
     if (this.data.userinfo==""){
       wx.redirectTo({
         url: '/pages/login/login',
       });
     }
-    let url = "/stu-grade/" + uid
+    let url = "/class-grade/" + className
     let method = "POST"
     let data = {}
     utils.request(url, method, data)
@@ -36,6 +35,7 @@ Page({
     
   },
 
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -44,21 +44,10 @@ Page({
     let className = wx.getStorageSync("curClass")
     this.setData({
       className: className,
-      userinfo: userinfo,
-      username: userinfo.username
+      userinfo: userinfo
     })
+    this.getGradeList(className)
 
-    console.log(options)
-    let { uid,username } = options
-    if(username && username!=""){
-      this.setData({
-        username: username
-      })
-    }
-    if(!uid || uid==""){
-      uid=this.data.userinfo.uid
-    }
-    this. getGradeList(uid)
   },
 
   /**
@@ -93,7 +82,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-    this.onLoad(this.options)
+    this.onLoad()
   },
 
   /**
