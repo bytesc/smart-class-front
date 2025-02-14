@@ -8,6 +8,13 @@
     </picker>
 </view>
 
+<view class="copilot-container" wx:if="{{role === 'teacher'}}">
+    <navigator class="copilot-item" url="/pages/copilot/copilot">
+      <image class="copilot-item-icon" src="/static/images/icons/智能问答.png"></image>
+      <view class="copilot-item-text">智能问答</view>
+    </navigator>
+</view>
+
 <view class="menu-container">
 
   <view  wx:if="{{role === 'teacher' || role === 'stu'}}">
@@ -39,10 +46,25 @@
   </view>
 
   <view wx:if="{{role === 'teacher' || role === 'stu'}}">
-    <navigator class="menu-item" url="/pages/policy-list/policy-list">
+    <navigator class="menu-item" url="/pages/announcement-list/announcement-list">
       <image class="menu-item-icon" src="/static/images/icons/公告.png"></image>
       <view class="menu-item-text">班级公告</view>
     </navigator>
   </view>
+
+  <view wx:if="{{role === 'teacher' || role === 'stu'}}">
+    <navigator class="menu-item" url="/pages/grade-prediction/grade-prediction">
+      <image class="menu-item-icon" src="/static/images/icons/预测.png"></image>
+      <view class="menu-item-text">成绩预测</view>
+    </navigator>
+  </view>
+
+  <view wx:if="{{role === 'teacher'}}">
+    <navigator class="menu-item" url="/pages/group/group">
+      <image class="menu-item-icon" src="/static/images/icons/分组.png"></image>
+      <view class="menu-item-text">智能分组</view>
+    </navigator>
+  </view>
+
 
 </view>

@@ -5,6 +5,35 @@ page{
   border-top: 1px solid #DDD;
 }
 
+
+.copilot-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF; /* 白色背景 */
+  padding: 20px 0; /* 上下内边距 */
+  border-bottom: 1px solid #DDD; /* 下边框 */
+  border-top: 1px solid #DDD; /* 下边框 */
+}
+
+.copilot-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* 使其宽度填满容器 */
+}
+
+.copilot-item-icon {
+  width: 50px; /* 图标宽度 */
+  height: 50px; /* 图标高度 */
+  margin-right: 10px; /* 图标右侧外边距 */
+}
+
+.copilot-item-text {
+  font-size: 32px; /* 文本字体大小 */
+  color: #333; /* 文本颜色 */
+}
+
 .menu-container{
   display: flex;
   flex-direction: row;

@@ -11,7 +11,11 @@
     "pages/my-grade/my-grade",
     "pages/class-grade/class-grade",
     "pages/policy/policy",
-    "pages/policy-list/policy-list"
+    "pages/policy-list/policy-list",
+    "pages/announcement-list/announcement-list",
+    "pages/grade-prediction/grade-prediction",
+    "pages/group/group",
+    "pages/copilot/copilot"
   ],
   "window": {
     "navigationBarTextStyle": "black",
