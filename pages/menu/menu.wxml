@@ -38,4 +38,11 @@
     </navigator>
   </view>
 
+  <view wx:if="{{role === 'teacher' || role === 'stu'}}">
+    <navigator class="menu-item" url="/pages/policy-list/policy-list">
+      <image class="menu-item-icon" src="/static/images/icons/公告.png"></image>
+      <view class="menu-item-text">班级公告</view>
+    </navigator>
+  </view>
+
 </view>

@@ -37,9 +37,6 @@ Page({
     .then(res => {
       console.log(res)
       let classes = res.data.class_list
-      if(classes.length>0){
-        wx.setStorageSync('curClass', classes[0])
-      }
       const formattedList = classes.map((className, index) => {
         return {
           id: index,
@@ -48,11 +45,16 @@ Page({
       });
       if(formattedList.length>0){
         this.setData({
-          currentClass: formattedList[0],
           classList: formattedList
         });
       }
-      
+      // console.log(this.data.currentClass)
+      if(this.data.currentClass.id==""){
+        this.setData({
+          currentClass: formattedList[0],
+        });
+        wx.setStorageSync('curClass', classes[0])
+      }
     })
     .catch(err => {
       console.log(err)
@@ -63,6 +65,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow() {
     let userinfo = wx.getStorageSync("userinfo")
     this.setData({
       userinfo: userinfo
@@ -84,21 +101,6 @@ Page({
         role: ""
       });
     }
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-    this.onLoad();
   },
 
   /**
@@ -119,7 +121,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-    this.onLoad();
+    this.onShow()
 
   },
 
