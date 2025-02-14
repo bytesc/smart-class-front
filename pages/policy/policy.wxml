@@ -1,0 +1,24 @@
+<!--pages/policy/policy.wxml-->
+<!-- <text>pages/policy/policy.wxml</text> -->
+
+<view class="container">
+  <!-- <view class="userinfo">
+    <text>用户名：{{userinfo.username}}</text>
+    <text>班级：{{className}}</text>
+  </view> -->
+  <view class="policy-detail">
+    <!-- <view class="userinfo">
+      <text>用户名：{{userinfo.username}}</text>
+      <text>班级：{{className}}</text>
+    </view> -->
+    <view class="policy-header">
+      <text class="policy-name">{{policyDetailData.policy_name}}</text>
+    </view>
+    <view class="publish-time-container">
+      <text class="publish-time">发布时间：{{policyDetailData.publish_time}}</text>
+    </view>
+    <view class="policy-content">
+      <text>{{policyDetailData.content}}</text>
+    </view>
+  </view>
+</view>

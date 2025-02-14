@@ -1,15 +1,17 @@
 {
   "pages": [
+    "pages/menu/menu",
     "pages/login/login",
     "pages/register/register",
-    "pages/menu/menu",
     "pages/index/index",
     "pages/logs/logs",
     "pages/mine/mine",
     "pages/home/home",
     "pages/my-class/my-class",
     "pages/my-grade/my-grade",
-    "pages/class-grade/class-grade"
+    "pages/class-grade/class-grade",
+    "pages/policy/policy",
+    "pages/policy-list/policy-list"
   ],
   "window": {
     "navigationBarTextStyle": "black",

@@ -1,0 +1,42 @@
+/* pages/policy-list/policy-list.wxss */
+
+.policy-list-top-bar{
+  height: 120px;
+  background-color: #1296db;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.policy-list-top-bar-text{
+  padding-bottom: 20px;
+  color: black;
+  font-size: large;
+  font-weight: 600;
+}
+.policy-list-top-bar-num{
+  color: black;
+}
+
+
+.policy-list-list{
+  display: flex;
+  flex-direction: column;
+}
+.policy-list-list-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 40px;
+  border-bottom: 1px solid #DDD;
+}
+.policy-list-list-row:hover{
+  background-color: #f5f5f5;
+}
+.policy-list-list-colum{
+  width: 100%;
+  text-align: center;
+}
+
+

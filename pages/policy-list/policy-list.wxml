@@ -1,0 +1,20 @@
+<!--pages/policy-list/policy-list.wxml-->
+<!-- <text>pages/policy-list/policy-list.wxml</text> -->
+
+<view>
+  <view class="policy-list-top-bar">
+    <view class="policy-list-top-bar-text">学校政策</view>
+    <view class="policy-list-top-bar-num">共 {{policyData.policy_list.length}} 条政策</view>
+  </view>
+  <view class="policy-list-list">
+    
+      <view  wx:for="{{policyData.policy_list}}" wx:key="index">
+        <navigator class="policy-list-list-row" url="/pages/policy/policy?policy_name={{item.policy_name}}">
+          <view class="policy-list-list-colum">{{item.policy_name}}</view>
+          <view class="policy-list-list-colum">{{item.publish_time}}</view>
+        </navigator>
+      </view>
+    
+  </view>
+  
+</view>

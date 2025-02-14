@@ -32,7 +32,7 @@
   </view>
 
   <view>
-    <navigator class="menu-item" url="">
+    <navigator class="menu-item" url="/pages/policy-list/policy-list">
       <image class="menu-item-icon" src="/static/images/icons/政策2.png"></image>
       <view class="menu-item-text">学校政策</view>
     </navigator>

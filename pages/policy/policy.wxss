@@ -1,0 +1,52 @@
+/* pages/policy/policy.wxss */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+/* .userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20rpx;
+} */
+
+.policy-detail {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  overflow: hidden;
+  box-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1);
+}
+
+.policy-header {
+  padding: 20rpx;
+  background-color: #e0e0e0;
+}
+
+.policy-name {
+  font-size: 36rpx;
+  color: #333;
+}
+
+.publish-time-container {
+  padding: 10rpx 20rpx;
+  background-color: #f8f8f8; 
+}
+
+.publish-time {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.policy-content {
+  padding: 20rpx;
+  font-size: 32rpx;
+  color: #666;
+  line-height: 1.6;
+}
