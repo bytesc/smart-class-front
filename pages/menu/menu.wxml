@@ -52,7 +52,7 @@
     </navigator>
   </view>
 
-  <view wx:if="{{role === 'teacher' || role === 'stu'}}">
+  <view wx:if="{{role === 'teacher'}}">
     <navigator class="menu-item" url="/pages/grade-prediction/grade-prediction">
       <image class="menu-item-icon" src="/static/images/icons/预测.png"></image>
       <view class="menu-item-text">成绩预测</view>

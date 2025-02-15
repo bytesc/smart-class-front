@@ -30,7 +30,7 @@ page{
 }
 
 .copilot-item-text {
-  font-size: 32px; /* 文本字体大小 */
+  font-size: 24px; /* 文本字体大小 */
   color: #333; /* 文本颜色 */
 }
 

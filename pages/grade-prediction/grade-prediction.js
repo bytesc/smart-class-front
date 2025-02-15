@@ -1,4 +1,6 @@
 // pages/grade-prediction/grade-prediction.js
+import utils from '../../utils/util.js';
+
 Page({
 
   /**
@@ -8,11 +10,31 @@ Page({
 
   },
 
+  getGradePrediction: function(className, lessonId){
+    let url = "/class-grade-prediction/"
+    let method = "POST"
+    let data = {
+      class_name:className,
+      lesson_id:lessonId
+    }
+    utils.request(url, method, data)
+    .then(res => {
+        console.log(res)
+      //   this.setData({
+      //   gradeData: res.data
+      // });
+    })
+    .catch(err => {
+      console.log(err)
+    });
+    
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.getGradePrediction("计211","DWDwwdwq")
   },
 
   /**
@@ -47,7 +69,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-
+    this.onLoad()
   },
 
   /**

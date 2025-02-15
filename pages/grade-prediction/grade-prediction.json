@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "navigationBarTitleText": "成绩预测",
+  "enablePullDownRefresh": true
 }
