@@ -4,7 +4,7 @@
  
 <view class="class-picker" wx:if="{{role === 'teacher'}}">
     <picker mode="selector" range="{{classList}}" range-key="name"  bindchange="classChange">
-      <view class="picker-label">▼ 点击切换班级：{{currentClass.name }}</view>
+      <view class="picker-label">▼ 切换班级：{{currentClass.name }}</view>
     </picker>
 </view>
 

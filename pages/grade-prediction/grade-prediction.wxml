@@ -1,2 +1,32 @@
 <!--pages/grade-prediction/grade-prediction.wxml-->
-<text>pages/grade-prediction/grade-prediction.wxml</text>
+<!-- <text>pages/grade-prediction/grade-prediction.wxml</text> -->
+<view>
+  <view class="prediction-top-bar">
+    <view class="prediction-top-bar-text">{{className}}</view>
+    <picker class="lesson-picker" mode="selector" range="{{lessonList}}" range-key="name" bindchange="onLessonChange">
+      <view class="picker">
+        ▼ 课程：{{selectedLessonName}}
+      </view>
+    </picker>
+  </view>
+
+
+
+
+  <view class="prediction-list">
+    <view  wx:for="{{prediction_result}}" wx:key="uid">
+      <navigator class="prediction-list-row" >
+        <view class="prediction-list-colum">{{item.stu_num}}</view>
+        <view class="prediction-list-colum">{{item.username}}</view>
+        <!-- <view class="prediction-list-colum">{{item.predicted_grade}}</view> -->
+        <view class="prediction-list-colum" wx:if="{{item.predicted_grade < 60}}" style="color: red;">
+          {{item.predicted_grade}}
+        </view>
+        <view class="prediction-list-colum" wx:else>
+          {{item.predicted_grade}}
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>
+

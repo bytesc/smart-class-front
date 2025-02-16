@@ -7,7 +7,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userinfo:{},
+    className:"",
+    predictable_lessons:"",
+    prediction_result:"",
+    lessonList: [],
+    selectedLessonId: "", // 选中的课程ID
+    selectedLessonName: "请点击选择课程" // 选中的课程名称
   },
 
   getGradePrediction: function(className, lessonId){
@@ -20,9 +26,9 @@ Page({
     utils.request(url, method, data)
     .then(res => {
         console.log(res)
-      //   this.setData({
-      //   gradeData: res.data
-      // });
+        this.setData({
+          prediction_result: res.data.result
+      });
     })
     .catch(err => {
       console.log(err)
@@ -30,11 +36,57 @@ Page({
     
   },
 
+
+  getPredictiableLessons: function(){
+    let url = "/check-predictable-lessons/"
+    let method = "POST"
+    let data = {
+    }
+    utils.request(url, method, data)
+    .then(res => {
+        console.log(res)
+        let lessonList = res.data.dataset_length_list.map(item => {
+          return {
+            id: item.lesson_id,
+            name: item.lesson_name
+          };
+        });
+        this.setData({
+          predictable_lessons: res.data.dataset_length_list,
+          lessonList: lessonList
+      });
+    })
+    .catch(err => {
+      console.log(err)
+    });
+    
+  },
+
+
+  onLessonChange: function(e) {
+    let index = e.detail.value;
+    let selectedLesson = this.data.lessonList[index];
+    this.setData({
+      selectedLessonId: selectedLesson.id,
+      selectedLessonName: selectedLesson.name
+    });
+
+    this.getGradePrediction(this.data.className, this.data.selectedLessonId);
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this.getGradePrediction("计211","DWDwwdwq")
+    let userinfo = wx.getStorageSync("userinfo")
+    let className = wx.getStorageSync("curClass")
+    this.setData({
+      className: className,
+      userinfo: userinfo
+    })
+    this.getPredictiableLessons()
+    // this.getGradePrediction("计211","DWDwwdwq")
+    
   },
 
   /**
@@ -69,7 +121,11 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-    this.onLoad()
+    this.onLoad(this.options)
+    if(this.data.selectedLessonId!=""){
+      this.getGradePrediction(this.data.className, this.data.selectedLessonId);
+    }
+    
   },
 
   /**
