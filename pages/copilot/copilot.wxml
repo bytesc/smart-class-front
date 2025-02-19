@@ -1,2 +1,25 @@
 <!--pages/copilot/copilot.wxml-->
-<text>pages/copilot/copilot.wxml</text>
+<!-- <text>pages/copilot/copilot.wxml</text> -->
+
+<view class="container">
+  <!-- <view class="userinfo">
+    <text>角色：{{role}}</text>
+    <text>用户名：{{userinfo.username}}</text>
+    <text>班级：{{className}}</text>
+  </view> -->
+  
+  <view class="chat-log">
+    <block wx:for="{{chatHistory}}" wx:key="index">
+      <view class="chat-message">
+        <text class="chat-user">用户：{{item.question}}</text>
+        <text class="chat-agent">AI助手：{{item.answer}}</text>
+      </view>
+    </block>
+  </view>
+  
+  <view class="question-area">
+    <input type="text" placeholder="请输入你的问题" bindinput="bindInput" value="{{question}}"/>
+    <button bindtap="askAgent">提问</button>
+  </view>
+
+</view>
