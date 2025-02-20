@@ -8,7 +8,8 @@
       </view>
       <view class="chat-message" >
         <view class="chat-agent-bubble">
-          <text class="chat-agent">{{item.answer}}</text>
+          <towxml class="chat-agent" nodes="{{item.answer}}"/>
+          <!-- <text class="chat-agent">{{item.answer}}</text> -->
         </view>
       </view>
     </block>

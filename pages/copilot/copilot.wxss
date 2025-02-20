@@ -49,7 +49,7 @@
 }
 
 .chat-agent-bubble {
-  max-width: 100%;
+  max-width: 90%;
   background-color: #d9e8ff;
   color: #0084ff;
   font-size: 14px;

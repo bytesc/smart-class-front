@@ -1,5 +1,6 @@
 // pages/copilot/copilot.js
 import utils from '../../utils/util.js';
+const app = getApp();
 
 Page({
 
@@ -44,9 +45,10 @@ Page({
     .then(res => {
         console.log(res)
         console.log(res.data.ans)
+        let ansMd = app.towxml(res.data.ans,'markdown')
         this.setData({
           answer: res.data.ans,
-          chatHistory: [...this.data.chatHistory, { question: this.data.question, answer: res.data.ans }],
+          chatHistory: [...this.data.chatHistory, { question: this.data.question, answer: ansMd }],
           questionHistory: newQuestion
         });
         this.setData({
