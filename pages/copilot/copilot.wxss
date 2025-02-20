@@ -20,9 +20,23 @@
   margin-bottom: 200px;
 }
 
+.no-chat-box{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
 .chat-message {
   display: flex;
   margin-bottom: 10px;
+}
+
+.chat-message-user {
+  flex-direction: row-reverse;
+}
+
+.chat-message-agent {
+  flex-direction: row;
 }
 
 .chat-user-bubble {
@@ -99,6 +113,7 @@
   font-size: 14px;
   resize: none;
   width: 100%;
+  min-height: 100px;
 }
 
 button {

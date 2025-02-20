@@ -1,12 +1,15 @@
 <view class="container">
   <view class="chat-log">
+    <view  class="no-chat-box" wx:if="{{chatHistory.length == 0}}">
+      <text class="no-chat-message">我可以回答你关于班级的问题，快来提问吧！</text>
+    </view>
     <block wx:for="{{chatHistory}}" wx:key="index">
-      <view class="chat-message">
+      <view class="chat-message chat-message-user">
         <view class="chat-user-bubble">
           <text class="chat-user">{{item.question}}</text>
         </view>
       </view>
-      <view class="chat-message" >
+      <view class="chat-message  chat-message-agent" >
         <view class="chat-agent-bubble">
           <towxml class="chat-agent" nodes="{{item.answer}}"/>
           <!-- <text class="chat-agent">{{item.answer}}</text> -->
