@@ -31,9 +31,10 @@ Page({
       });
       return;
     }
-    wx.showToast({
-      title: '问题提交成功',
-      icon: 'none'
+
+    wx.showLoading({
+      title: '正在思考',
+      mask: true
     });
 
     let url = "/ai-agent/"
@@ -54,12 +55,27 @@ Page({
     })
     .catch(err => {
       console.log(err)
-      wx.showToast({
-        title: '请求失败',
-        icon: 'none'
+    })
+    .finally(() => {
+      wx.hideLoading();
+      this.setData({
+        question: ""
       });
     });
   
+  },
+
+  clearChatHistory: function() {
+    this.setData({
+      question: "",
+      answer: "",
+      questionHistory:"",
+      chatHistory: [], 
+    });
+    wx.showToast({
+      title: '聊天已清空',
+      icon: 'none'
+    });
   },
 
   /**

@@ -1,25 +1,24 @@
-<!--pages/copilot/copilot.wxml-->
-<!-- <text>pages/copilot/copilot.wxml</text> -->
-
 <view class="container">
-  <!-- <view class="userinfo">
-    <text>角色：{{role}}</text>
-    <text>用户名：{{userinfo.username}}</text>
-    <text>班级：{{className}}</text>
-  </view> -->
-  
   <view class="chat-log">
     <block wx:for="{{chatHistory}}" wx:key="index">
       <view class="chat-message">
-        <text class="chat-user">用户：{{item.question}}</text>
-        <text class="chat-agent">AI助手：{{item.answer}}</text>
+        <view class="chat-user-bubble">
+          <text class="chat-user">{{item.question}}</text>
+        </view>
+      </view>
+      <view class="chat-message" >
+        <view class="chat-agent-bubble">
+          <text class="chat-agent">{{item.answer}}</text>
+        </view>
       </view>
     </block>
   </view>
   
   <view class="question-area">
-    <input type="text" placeholder="请输入你的问题" bindinput="bindInput" value="{{question}}"/>
-    <button bindtap="askAgent">提问</button>
+    <textarea class="question-input" placeholder="请输入你的问题" bindinput="bindInput" value="{{question}}" auto-height="true" />
+    <view class="action-container">
+      <button class="ask-btn" bindtap="askAgent">提问</button>
+      <button class="clear-btn" bindtap="clearChatHistory">清空聊天</button>
+    </view>
   </view>
-
 </view>
