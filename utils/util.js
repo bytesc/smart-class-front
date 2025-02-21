@@ -25,6 +25,7 @@ const request = (url, method, data) => {
         'content-type': 'application/json', // 默认值
         "token": wx.getStorageSync('token')
       },
+      timeout: 300000,
       success(res) {
         // 成功处理
         if (res.statusCode === 200) {
