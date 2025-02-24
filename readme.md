@@ -12,7 +12,9 @@
 
 使用[微信小程序开发工具打开](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)
 
-界面右上角，`详情->基本信息->AppId` 与后端保值一致
+界面右上角，`详情->基本信息->AppId` 与后端保值一致。
+
+获取途径：[微信公众平台](https://mp.weixin.qq.com/)
 
 `./utils/util.js` 19行附件，改为后端服务器 url
 ```javascript
