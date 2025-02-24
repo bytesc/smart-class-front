@@ -23,14 +23,20 @@ Page({
       class_name:className,
       lesson_id:lessonId
     }
+    wx.showLoading({
+      title: '登录中',
+      mask: true
+    });
     utils.request(url, method, data)
     .then(res => {
+      wx.hideLoading();
         console.log(res)
         this.setData({
           prediction_result: res.data.result
       });
     })
     .catch(err => {
+      wx.hideLoading();
       console.log(err)
     });
     

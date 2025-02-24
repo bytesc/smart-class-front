@@ -37,9 +37,16 @@ Page({
     password =  md5(password);
     const data = { uid, password };
     const url = "/login/"
+
+    wx.showLoading({
+      title: '登录中',
+      mask: true
+    });
+
     utils.request(url, method, data)
       .then(res => {
         console.log(res)
+        wx.hideLoading();
         if(res.code===200){
           wx.showToast({
             title: '登录成功',
@@ -53,6 +60,28 @@ Page({
             wx.setStorageSync('curClass', userinfo.stu_info.class_name);
           }
 
+          wx.showLoading({
+            title: '绑定中',
+            mask: true
+          });
+          wx.login({
+            success:(res)=>{
+              console.log(res);
+              let code=res.code
+              let url = "/set-openid/"
+              let method = "POST"
+              let data = {uid:userinfo.uid, code:code}
+              utils.request(url, method, data)
+              .then(res => {
+                wx.hideLoading();
+                console.log(res)
+              })
+              .catch(err => {
+                wx.hideLoading();
+                console.log(err)
+              });
+            }
+          })
 
           wx.switchTab({
             url: '/pages/menu/menu',
@@ -63,9 +92,12 @@ Page({
 
       })
       .catch(err => {
-
+        wx.hideLoading();
       });
   },
+
+
+  
 
   /**
    * 生命周期函数--监听页面加载

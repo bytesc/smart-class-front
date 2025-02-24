@@ -35,6 +35,7 @@ Page({
 
   handleLogout : function(e){
     wx.setStorageSync("userinfo","")
+    wx.setStorageSync("wechatUser","")
     wx.setStorageSync("token","")
     wx.setStorageSync("curClass","")
 
