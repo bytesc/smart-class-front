@@ -25,7 +25,7 @@ Page({
 
   askAgent: function(){
     let newQuestion =  this.data.questionHistory + this.data.question;
-    if (newQuestion === "") {
+    if (this.data.question === "") {
       wx.showToast({
         title: '请输入问题',
         icon: 'none'
@@ -40,7 +40,7 @@ Page({
 
     let url = "/ai-agent/"
     let method = "POST"
-    let data = {question:newQuestion}
+    let data = {question: newQuestion}
     utils.request(url, method, data)
     .then(res => {
         console.log(res)
@@ -74,16 +74,17 @@ Page({
       questionHistory:"",
       chatHistory: [], 
     });
-    wx.showToast({
-      title: '聊天已清空',
-      icon: 'none'
-    });
+    // wx.showToast({
+    //   title: '聊天已清空',
+    //   icon: 'none'
+    // });
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    this.clearChatHistory()
     let userinfo = wx.getStorageSync("userinfo")
     let className = wx.getStorageSync("curClass")
     this.setData({
@@ -122,7 +123,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
+    this.onLoad(this.options)
   },
 
   /**
