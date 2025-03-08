@@ -12,6 +12,7 @@ Page({
     predictable_lessons:"",
     prediction_result:"",
     lessonList: [],
+    result_img: "",
     selectedLessonId: "", // 选中的课程ID
     selectedLessonName: "请点击选择课程" // 选中的课程名称
   },
@@ -24,7 +25,7 @@ Page({
       lesson_id:lessonId
     }
     wx.showLoading({
-      title: '登录中',
+      title: '预测中',
       mask: true
     });
     utils.request(url, method, data)
@@ -32,7 +33,8 @@ Page({
       wx.hideLoading();
         console.log(res)
         this.setData({
-          prediction_result: res.data.result
+          prediction_result: res.data.result,
+          result_img: res.data.img_path
       });
     })
     .catch(err => {

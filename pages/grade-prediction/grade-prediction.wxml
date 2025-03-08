@@ -10,10 +10,13 @@
     </picker>
   </view>
 
-
-
+<view class="prediction-image-frame">
+  <image  class="prediction-image" wx:if="{{result_img!=''}}"  src="{{result_img}}" mode="widthFix"></image>
+</view>
+  
 
   <view class="prediction-list">
+    
     <view  wx:for="{{prediction_result}}" wx:key="uid">
       <navigator class="prediction-list-row" >
         <view class="prediction-list-colum">{{item.stu_num}}</view>
