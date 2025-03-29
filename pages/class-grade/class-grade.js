@@ -9,7 +9,8 @@ Page({
   data: {
     userinfo:{},
     className:"",
-    gradeData:""
+    gradeData:"",
+    result_img: ""
   },
 
   getGradeList: function(className){
@@ -25,7 +26,8 @@ Page({
     .then(res => {
         console.log(res)
         this.setData({
-        gradeData: res.data
+        gradeData: res.data,
+        result_img: res.data.img_path
       });
     })
     .catch(err => {

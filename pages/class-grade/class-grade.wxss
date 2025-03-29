@@ -56,4 +56,9 @@
   text-align: center;
 }
 
-
+.prediction-image {
+  width: 100%; /* 图片宽度为100% */
+  position: relative; /* 绝对定位，使图片覆盖整个框架 */
+  top: 0; /* 图片顶部对齐框架顶部 */
+  left: 0; /* 图片左侧对齐框架左侧 */
+}

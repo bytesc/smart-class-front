@@ -6,6 +6,11 @@
     <view class="my-grade-top-bar-text">{{className}}</view>
     <view class="my-grade-top-bar-num">共 {{gradeData.class_grade_list.length}} 名学生</view>
   </view>
+
+<view class="prediction-image-frame">
+  <image  class="prediction-image" wx:if="{{result_img!=''}}"  src="{{result_img}}" mode="widthFix"></image>
+</view>
+
   <view class="my-grade-list">
     
       <view  wx:for="{{gradeData.class_grade_list}}" wx:key="index">
