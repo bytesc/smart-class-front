@@ -66,5 +66,12 @@
     </navigator>
   </view>
 
+  <view >
+    <navigator class="menu-item" url="/pages/message/message">
+      <image class="menu-item-icon" src="/static/images/icons/消息.png"></image>
+      <view class="menu-item-text">我的消息</view>
+    </navigator>
+  </view>
+
 
 </view>

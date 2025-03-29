@@ -15,7 +15,8 @@
     "pages/announcement-list/announcement-list",
     "pages/grade-prediction/grade-prediction",
     "pages/group/group",
-    "pages/copilot/copilot"
+    "pages/copilot/copilot",
+    "pages/message/message"
   ],
   "window": {
     "navigationBarTextStyle": "black",
