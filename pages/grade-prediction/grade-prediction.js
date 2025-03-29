@@ -93,7 +93,6 @@ Page({
       userinfo: userinfo
     })
     this.getPredictiableLessons()
-    // this.getGradePrediction("计211","DWDwwdwq")
     
   },
 

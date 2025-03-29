@@ -1,2 +1,39 @@
 <!--pages/group/group.wxml-->
-<text>pages/group/group.wxml</text>
+<!-- <text>pages/group/group.wxml</text> -->
+
+
+<view>
+  <view class="group-top-bar">
+    <view class="group-top-bar-text">{{className}}</view>
+    <view class="input-section">
+      <text class="input-label">请输入分组数量：</text>
+      <input 
+        type="number" 
+        placeholder="组数量" 
+        bindinput="onInputChange" 
+        class="number-input"
+      />
+   </view>
+  
+    <button bindtap="handleGroup" class="group-btn">开始分组</button>
+  </view>
+  
+<!-- Group Results Section -->
+<view class="results-container" wx:if="{{result_list.length > 0}}">
+    <view class="results-title">分组结果</view>
+    
+    <view class="groups-container">
+      <view class="group-item" wx:for="{{result_list}}" wx:key="index">
+        <view class="group-header">第{{index + 1}}组</view>
+        <view class="group-members">
+          <view class="member-item" wx:for="{{item}}" wx:key="uid">
+            <text class="member-name">{{item.username}}</text>
+            <text class="member-id">{{item.stu_num}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+
+</view>

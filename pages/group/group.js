@@ -1,18 +1,72 @@
 // pages/group/group.js
+import utils from '../../utils/util.js';
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    userinfo:{},
+    className:"",
+    result_list:"",
+    groupSize: null
+  },
 
+  onInputChange: function(e) {
+    this.setData({
+      groupSize: parseInt(e.detail.value)
+    });
+  },
+
+  handleGroup: function() {
+    if (!this.data.groupSize || this.data.groupSize <= 1) {
+      wx.showToast({
+        title: '请输入有效的分组数量',
+        icon: 'none'
+      });
+      return;
+    }
+    
+    this.getGroup(this.data.className, this.data.groupSize);
+  },
+
+  getGroup: function(className, numOfGroups){
+    let url = "/class-group/"
+    let method = "POST"
+    let data = {
+      class_name:className,
+      num_of_groups:numOfGroups
+    }
+    wx.showLoading({
+      title: '智能分组中',
+      mask: true
+    });
+    utils.request(url, method, data)
+    .then(res => {
+      wx.hideLoading();
+        console.log(res)
+        this.setData({
+          result_list: res.data.result
+      });
+    })
+    .catch(err => {
+      wx.hideLoading();
+      console.log(err)
+    });
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    let userinfo = wx.getStorageSync("userinfo")
+    let className = wx.getStorageSync("curClass")
+    this.setData({
+      className: className,
+      userinfo: userinfo
+    })
   },
 
   /**
@@ -47,7 +101,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-
+    this.onLoad(this.options)
   },
 
   /**

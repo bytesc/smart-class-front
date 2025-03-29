@@ -4,7 +4,7 @@
 
 .prediction-top-bar{
   height: 160px;
-  background-color: #cdcdcd;
+  background-color: #C1F0C1;
   display: flex;
   flex-direction: column;
   justify-content: center;
