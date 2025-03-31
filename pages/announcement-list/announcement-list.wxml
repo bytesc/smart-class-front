@@ -1,2 +1,24 @@
 <!--pages/announcement-list/announcement-list.wxml-->
-<text>pages/announcement-list/announcement-list.wxml</text>
+<view>
+  <view class="announcement-list-top-bar">
+    <view class="announcement-list-top-bar-text">班级公告</view>
+    <view class="announcement-list-top-bar-num">{{className}} 共 {{announcement_list.length}} 条公告</view>
+  </view>
+  <view class="announcement-list-container">
+    
+      <view  wx:for="{{announcement_list}}" wx:key="index" class="announcement-item">
+        <view class="announcement-header">
+          <view class="announcement-title">{{item.announcement_name}}</view>
+          <view class="announcement-meta">
+            <text class="announcement-time">{{item.publish_time}}</text>
+            <text class="announcement-author">发布者: {{item.username}}</text>
+          </view>
+        </view>
+        <view class="announcement-content">
+          <text>{{item.content}}</text>
+        </view>
+      </view>
+    
+  </view>
+  
+</view>
