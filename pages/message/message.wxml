@@ -5,6 +5,9 @@
   <view class="message-list-top-bar">
     <view class="message-list-top-bar-text">我的消息</view>
     <view class="message-list-top-bar-num">{{userinfo.username}} {{userinfo.uid}} 共 {{message_list.length}} 条消息</view>
+    <view class="publish-btn">
+      <navigator url="/pages/my-class/my-class"> 班级通讯录 </navigator>
+    </view>
   </view>
   <view class="message-message-container">
     <view wx:for="{{message_list}}" wx:key="message_id" class="message-item">

@@ -3,7 +3,11 @@
   <view class="announcement-list-top-bar">
     <view class="announcement-list-top-bar-text">班级公告</view>
     <view class="announcement-list-top-bar-num">{{className}} 共 {{announcement_list.length}} 条公告</view>
+    <view class="publish-btn" wx:if="{{publish_auth}}">
+      <navigator url="/pages/send-announcement/send-announcement"> 发布公告 </navigator>
+    </view>
   </view>
+
   <view class="announcement-list-container">
     
       <view  wx:for="{{announcement_list}}" wx:key="index" class="announcement-item">

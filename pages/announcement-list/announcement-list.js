@@ -9,6 +9,7 @@ Page({
   data: {
     userinfo:{},
     className:"",
+    publish_auth:false,
     announcement_list:""
   },
 
@@ -45,6 +46,12 @@ Page({
       className: className,
       userinfo: userinfo,
     })
+    if(userinfo.teacher_info || (userinfo.stu_info.stu_position&&userinfo.stu_info.stu_position!=="")){
+      this.setData({
+        publish_auth:true
+      })
+    }
+    console.log(this.data.publish_auth)
     this.getAnnouncementList()
   },
 
