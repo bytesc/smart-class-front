@@ -11,7 +11,8 @@
     <view class="my-grade-list-row" wx:for="{{gradeData.stu_grade_list}}" wx:key="index">
       <view class="my-grade-list-colum">{{item.lesson_name}}</view>
       <view class="my-grade-list-colum">{{item.semester}}</view>
-      <view class="my-grade-list-colum">{{item.grade}}</view>
+      <view class="my-grade-list-colum"  wx:if="{{item.grade < 60}}" style="color: red;">{{item.grade}}</view>
+      <view class="my-grade-list-colum"  wx:else>{{item.grade}}</view>
     </view>
   </view>
   
