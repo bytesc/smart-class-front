@@ -1,2 +1,34 @@
 <!--pages/message/message.wxml-->
-<text>pages/message/message.wxml</text>
+<!-- <text>pages/message/message.wxml</text> -->
+
+<view>
+  <view class="message-list-top-bar">
+    <view class="message-list-top-bar-text">我的消息</view>
+    <view class="message-list-top-bar-num">{{userinfo.username}} {{userinfo.uid}} 共 {{message_list.length}} 条消息</view>
+  </view>
+  <view class="message-message-container">
+    <view wx:for="{{message_list}}" wx:key="message_id" class="message-item">
+      <view class="message-header" bindtap="toggleMessage" data-index="{{index}}">
+        <view class="message-info">
+          <view class="message-info-top">
+            <view class="message-sender-name">{{item.sender_username}}</view>
+            <view class="message-sender-uid">{{item.sender_uid}}</view>
+            <view class="message-send-time-container">
+              <view class="message-send-time">{{item.send_time}}</view>
+            </view>
+          </view>
+          <view class="message-summary" wx:if="{{!openedMessages[index]}}">{{item.content_summary}}...</view>
+        </view>
+
+        <view class="message-arrow">{{openedMessages[index] ? '▼' : '▶'}}</view>
+      </view>
+      
+      <view class="message-content" wx:if="{{openedMessages[index]}}">
+        <view>
+          <text>{{ item.content }}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+</view>

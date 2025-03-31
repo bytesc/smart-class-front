@@ -1,1 +1,95 @@
 /* pages/message/message.wxss */
+.message-list-top-bar{
+  height: 120px;
+  background-color: #04BE02;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.message-list-top-bar-text{
+  padding-bottom: 20px;
+  color: black;
+  font-size: large;
+  font-weight: 600;
+}
+.message-list-top-bar-num{
+  color: black;
+}
+
+.message-message-container {
+  padding: 20rpx;
+}
+
+.message-item {
+  border-bottom: 1rpx solid #eee;
+  padding: 20rpx 0;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10rpx 0;
+}
+
+.message-info {
+  flex: 1;
+}
+
+.message-info-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10rpx;
+  justify-content: space-between; /* 新增 */
+}
+
+.message-sender-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-right: 15rpx;
+}
+
+.message-sender-uid {
+  font-size: 24rpx;
+  color: #999;
+  margin-right: 15rpx;
+}
+
+.message-send-time-container {
+  flex: 1; /* 新增 */
+  display: flex;
+  justify-content: flex-end; /* 新增 */
+}
+
+.message-send-time {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.message-summary {
+  font-size: 28rpx;
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.message-arrow {
+  width: 60rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #999;
+}
+
+.message-content {
+  padding: 20rpx;
+  margin-top: 10rpx;
+  background-color: #f9f9f9;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.6;
+}
