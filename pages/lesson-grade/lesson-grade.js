@@ -1,4 +1,4 @@
-// pages/announcement-list/announcement-list.js
+// pages/lesson-grade/lesson-grade.js
 import utils from '../../utils/util.js';
 
 Page({
@@ -9,30 +9,45 @@ Page({
   data: {
     userinfo:{},
     className:"",
-    announcement_list:""
+    grade_list:"",
+    result_img: "",
+    openedLessons: []
   },
 
-
-  getAnnouncementList: function(){
+  getLessonGradeList: function(className){
     if (this.data.userinfo==""){
       wx.redirectTo({
         url: '/pages/login/login',
       });
     }
-    let url = "/announcement-list/"+this.data.className
+    let url = "/lesson-grade/" + className
     let method = "POST"
     let data = {}
     utils.request(url, method, data)
     .then(res => {
         console.log(res)
+        const openedLessons = new Array(res.data.lesson_grade_list.length).fill(false)
         this.setData({
-          announcement_list: res.data.announcement_list
+          grade_list: res.data,
+          result_img: res.data.img_path,
+          openedLessons: openedLessons
       });
     })
     .catch(err => {
       console.log(err)
     });
-  
+    
+    
+  },
+
+
+  toggleLesson: function(e) {
+    const index = e.currentTarget.dataset.index;
+    const newOpenedLessons = [...this.data.openedLessons];
+    newOpenedLessons[index] = !newOpenedLessons[index];
+    this.setData({
+      openedLessons: newOpenedLessons
+    });
   },
 
   /**
@@ -43,9 +58,9 @@ Page({
     let className = wx.getStorageSync("curClass")
     this.setData({
       className: className,
-      userinfo: userinfo,
+      userinfo: userinfo
     })
-    this.getAnnouncementList()
+    this.getLessonGradeList(className)
   },
 
   /**
@@ -80,7 +95,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-    this.onLoad(this.options)
+    this.onLoad()
   },
 
   /**

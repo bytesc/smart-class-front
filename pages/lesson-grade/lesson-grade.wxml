@@ -1,0 +1,37 @@
+<!--pages/lesson-grade/lesson-grade.wxml-->
+<!-- <text>pages/lesson-grade/lesson-grade.wxml</text> -->
+
+<view>
+  <view class="lesson-grade-top-bar">
+    <view class="lesson-grade-top-bar-text">{{className}}</view>
+    <view class="lesson-grade-top-bar-num">共 {{grade_list.lesson_grade_list.length}} 个课程</view>
+  </view>
+
+<view class="prediction-image-frame">
+  <image  class="prediction-image" wx:if="{{result_img!=''}}"  src="{{result_img}}" mode="widthFix"></image>
+</view>
+
+<view class="lesson-grade-container">
+    <view wx:for="{{grade_list.lesson_grade_list}}" wx:key="lesson_num" class="lesson-item">
+      <view class="lesson-header" bindtap="toggleLesson" data-index="{{index}}">
+        <view class="lesson-title">{{item.lesson_name}}</view>
+        <view class="lesson-arrow">{{openedLessons[index] ? '▼' : '▶'}}</view>
+      </view>
+      
+      <view class="grade-list" wx:if="{{openedLessons[index]}}">
+        <view class="grade-list-header">
+          <view class="grade-list-col">学号</view>
+          <view class="grade-list-col">姓名</view>
+          <view class="grade-list-col">成绩</view>
+        </view>
+        
+        <view wx:for="{{item.grade_list}}" wx:key="stu_num" class="grade-list-row">
+          <view class="grade-list-col">{{item.stu_num}}</view>
+          <view class="grade-list-col">{{item.username}}</view>
+          <view class="grade-list-col">{{item.grade}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+</view>

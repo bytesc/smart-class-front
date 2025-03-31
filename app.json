@@ -16,7 +16,8 @@
     "pages/grade-prediction/grade-prediction",
     "pages/group/group",
     "pages/copilot/copilot",
-    "pages/message/message"
+    "pages/message/message",
+    "pages/lesson-grade/lesson-grade"
   ],
   "window": {
     "navigationBarTextStyle": "black",

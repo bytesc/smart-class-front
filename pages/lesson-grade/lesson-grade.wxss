@@ -1,0 +1,80 @@
+/* pages/lesson-grade/lesson-grade.wxss */
+
+.lesson-grade-top-bar{
+  height: 120px;
+  background-color: #f4ea2a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.lesson-grade-top-bar-text{
+  padding-bottom: 20px;
+  color: #515151;
+  font-size: large;
+  font-weight: 600;
+}
+.lesson-grade-top-bar-num{
+  color: #515151;
+}
+
+
+.lesson-grade-container {
+  margin: 20px;
+  padding-bottom: 50px;
+}
+
+.lesson-item {
+  margin-bottom: 15px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.lesson-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.lesson-title {
+  flex: 1;
+}
+
+.lesson-arrow {
+  margin-left: 10px;
+}
+
+.grade-list {
+  background-color: #fff;
+}
+
+.grade-list-header, .grade-list-row {
+  display: flex;
+  padding: 10px 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.grade-list-header {
+  font-weight: bold;
+  background-color: #f9f9f9;
+}
+
+.grade-list-col {
+  flex: 1;
+  text-align: center;
+}
+
+.grade-list-row:last-child {
+  border-bottom: none;
+}
+
+.prediction-image {
+  width: 100%; /* 图片宽度为100% */
+  position: relative; /* 绝对定位，使图片覆盖整个框架 */
+  top: 0; /* 图片顶部对齐框架顶部 */
+  left: 0; /* 图片左侧对齐框架左侧 */
+}

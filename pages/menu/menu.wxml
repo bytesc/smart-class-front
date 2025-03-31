@@ -24,6 +24,13 @@
     </navigator>
   </view>
 
+  <view >
+    <navigator class="menu-item" url="/pages/message/message">
+      <image class="menu-item-icon" src="/static/images/icons/消息.png"></image>
+      <view class="menu-item-text">我的消息</view>
+    </navigator>
+  </view>
+
   <view wx:if="{{ role === 'stu'}}">
     <navigator class="menu-item" url="/pages/my-grade/my-grade">
       <image class="menu-item-icon" src="/static/images/icons/grade.png"></image>
@@ -38,17 +45,10 @@
     </navigator>
   </view>
 
-  <view>
-    <navigator class="menu-item" url="/pages/policy-list/policy-list">
-      <image class="menu-item-icon" src="/static/images/icons/政策2.png"></image>
-      <view class="menu-item-text">学校政策</view>
-    </navigator>
-  </view>
-
-  <view wx:if="{{role === 'teacher' || role === 'stu'}}">
-    <navigator class="menu-item" url="/pages/announcement-list/announcement-list">
-      <image class="menu-item-icon" src="/static/images/icons/公告.png"></image>
-      <view class="menu-item-text">班级公告</view>
+  <view wx:if="{{ role === 'teacher'}}">
+    <navigator class="menu-item" url="/pages/lesson-grade/lesson-grade">
+      <image class="menu-item-icon" src="/static/images/icons/课程成绩.png"></image>
+      <view class="menu-item-text">课程成绩</view>
     </navigator>
   </view>
 
@@ -66,10 +66,17 @@
     </navigator>
   </view>
 
-  <view >
-    <navigator class="menu-item" url="/pages/message/message">
-      <image class="menu-item-icon" src="/static/images/icons/消息.png"></image>
-      <view class="menu-item-text">我的消息</view>
+  <view>
+    <navigator class="menu-item" url="/pages/policy-list/policy-list">
+      <image class="menu-item-icon" src="/static/images/icons/政策2.png"></image>
+      <view class="menu-item-text">学校政策</view>
+    </navigator>
+  </view>
+
+  <view wx:if="{{role === 'teacher' || role === 'stu'}}">
+    <navigator class="menu-item" url="/pages/announcement-list/announcement-list">
+      <image class="menu-item-icon" src="/static/images/icons/公告.png"></image>
+      <view class="menu-item-text">班级公告</view>
     </navigator>
   </view>
 

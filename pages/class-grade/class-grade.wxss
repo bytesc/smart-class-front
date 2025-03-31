@@ -39,6 +39,7 @@
 .my-grade-list{
   display: flex;
   flex-direction: column;
+  padding-bottom: 50px;
 }
 .my-grade-list-row{
   display: flex;
