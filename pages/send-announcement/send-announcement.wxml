@@ -1,2 +1,31 @@
 <!--pages/send-announcement/send-announcement.wxml-->
-<text>pages/send-announcement/send-announcement.wxml</text>
+<!-- <text>pages/send-announcement/send-announcement.wxml</text> -->
+
+<view class="announcement-list-top-bar">
+    <view class="announcement-list-top-bar-text">{{userinfo.username}}</view>
+    <view class="announcement-list-top-bar-num">发送公告 -> {{className}}}</view>
+</view>
+
+<view class="send-announcement-container">
+
+  <form bindsubmit="onSendForm" class="announcement-form">
+    <view class="form-group">
+      <text class="label">标题：</text>
+      <input name="announcement_name" type="text" placeholder="请输入公告标题" />
+    </view>
+    <view class="form-group">
+      <textarea 
+        name="content" 
+        placeholder="请输入公告内容..." 
+        class="announcement-input"
+        auto-height
+        maxlength="500"
+      ></textarea>
+    </view>
+    
+    <view class="form-group">
+      <button form-type="submit" class="submit-btn" hover-class="btn-hover">发送公告</button>
+    </view>
+  </form>
+  
+</view>
