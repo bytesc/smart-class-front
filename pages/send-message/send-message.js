@@ -14,8 +14,9 @@ Page({
 
   onSendForm: function(e) {
     const method = 'POST';
-    let receiver = this.data.receiver
-    const data = { receiver, content };
+    const { content } = e.detail.value; 
+    let receiver_uid = this.data.receiver
+    const data = { receiver_uid, content };
     const url = "/send-message/"
 
     wx.showLoading({
@@ -25,11 +26,10 @@ Page({
 
     utils.request(url, method, data)
       .then(res => {
+        wx.hideLoading();
         console.log(res)
         if(res.code===200){
-          wx.redirectTo({
-            url: '/pages/my-class/my-class',
-          });
+          wx.navigateBack()
         }else{
 
         }

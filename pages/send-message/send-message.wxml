@@ -1,2 +1,27 @@
 <!--pages/send-message/send-message.wxml-->
-<text>pages/send-message/send-message.wxml</text>
+<!-- <text>pages/send-message/send-message.wxml</text> -->
+
+<view class="message-list-top-bar">
+    <view class="message-list-top-bar-text">{{userinfo.username}}</view>
+    <view class="message-list-top-bar-num">发送消息 -> {{receiver}}</view>
+</view>
+
+<view class="send-message-container">
+
+  <form bindsubmit="onSendForm" class="message-form">
+    <view class="form-group">
+      <textarea 
+        name="content" 
+        placeholder="请输入消息内容..." 
+        class="message-input"
+        auto-height
+        maxlength="500"
+      ></textarea>
+    </view>
+    
+    <view class="form-group">
+      <button form-type="submit" class="submit-btn" hover-class="btn-hover">发送消息</button>
+    </view>
+  </form>
+  
+</view>

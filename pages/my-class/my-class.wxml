@@ -13,9 +13,10 @@
     <view class="my-class-list-row" wx:for="{{classData.stu_list}}" wx:key="index">
       <view class="my-class-list-colum">{{item.stu_num}}</view>
       <view class="my-class-list-colum">{{item.username}}</view>
+      <view class="my-class-list-colum">{{item.uid}}</view>
       <view class="my-class-list-colum">
         <navigator class="send-message-link" url="/pages/send-message/send-message?receiver={{item.uid}}">
-          ✉️ 发消息
+          ✉️联系
         </navigator>
       </view>
     </view>
