@@ -27,6 +27,9 @@
         <view>
           <text>{{ item.content }}</text>
         </view>
+        <navigator class="send-message-link" url="/pages/send-message/send-message?receiver={{item.sender_uid}}">
+          ✉️ 回复
+        </navigator>
       </view>
     </view>
   </view>

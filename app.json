@@ -17,7 +17,8 @@
     "pages/group/group",
     "pages/copilot/copilot",
     "pages/message/message",
-    "pages/lesson-grade/lesson-grade"
+    "pages/lesson-grade/lesson-grade",
+    "pages/send-message/send-message"
   ],
   "window": {
     "navigationBarTextStyle": "black",

@@ -93,3 +93,9 @@
   color: #333;
   line-height: 1.6;
 }
+
+.send-message-link{
+  color: blue;
+  margin-top: 5px;
+  text-align: right;
+}

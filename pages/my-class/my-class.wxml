@@ -6,13 +6,18 @@
     <view class="my-class-top-bar-text">我的班级：{{className}}</view>
     <view class="my-class-top-bar-num">共 {{classData.stu_list.length}} 名学生</view>
   </view>
-  <view class="my-class-teacher-bar">
+  <navigator class="my-class-teacher-bar" url="/pages/send-message/send-message?receiver={{classData.class_teacher_uid}}">
     <view class="my-class-teacher-text">班导师：{{classData.class_teacher_name}}</view>
-  </view>
+  </navigator>
   <view class="my-class-list">
     <view class="my-class-list-row" wx:for="{{classData.stu_list}}" wx:key="index">
       <view class="my-class-list-colum">{{item.stu_num}}</view>
       <view class="my-class-list-colum">{{item.username}}</view>
+      <view class="my-class-list-colum">
+        <navigator class="send-message-link" url="/pages/send-message/send-message?receiver={{item.uid}}">
+          ✉️ 发消息
+        </navigator>
+      </view>
     </view>
   </view>
   
