@@ -3,7 +3,7 @@
 
 <view class="announcement-list-top-bar">
     <view class="announcement-list-top-bar-text">{{userinfo.username}}</view>
-    <view class="announcement-list-top-bar-num">发送公告 -> {{className}}}</view>
+    <view class="announcement-list-top-bar-num">发送公告 -> {{className}}</view>
 </view>
 
 <view class="send-announcement-container">

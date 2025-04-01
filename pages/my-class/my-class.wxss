@@ -60,3 +60,24 @@
 .send-message-link{
   color: blue;
 }
+
+.publish-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.publish-btn navigator {
+  background-color: #fff;
+  color: #04BE02;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.publish-btn navigator:active {
+  background-color: #f0f0f0;
+  transform: scale(0.98);
+}

@@ -5,6 +5,9 @@
   <view class="my-class-top-bar">
     <view class="my-class-top-bar-text">我的班级：{{className}}</view>
     <view class="my-class-top-bar-num">共 {{classData.stu_list.length}} 名学生</view>
+    <view class="publish-btn">
+      <navigator url="/pages/send-group-message/send-group-message"> 群发消息 </navigator>
+    </view>
   </view>
   <navigator class="my-class-teacher-bar" url="/pages/send-message/send-message?receiver={{classData.class_teacher_uid}}">
     <view class="my-class-teacher-text">班导师：{{classData.class_teacher_name}}</view>

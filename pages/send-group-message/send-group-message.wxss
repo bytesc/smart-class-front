@@ -1,26 +1,26 @@
-/* pages/send-announcement/send-announcement.wxss */
+/* pages/send-group-message/send-group-message.wxss */
 
 /* pages/send-message/send-message.wxss */
 
-.announcement-list-top-bar{
+.message-list-top-bar{
   height: 120px;
-  background-color: #1296db;
+  background-color: #04BE02;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.announcement-list-top-bar-text{
+.message-list-top-bar-text{
   padding-bottom: 20px;
   color: black;
   font-size: large;
   font-weight: 600;
 }
-.announcement-list-top-bar-num{
+.message-list-top-bar-num{
   color: black;
 }
 
-.send-announcement-container {
+.send-message-container {
   padding: 20rpx;
   display: flex;
   flex-direction: column;
@@ -39,7 +39,7 @@
   color: #333;
 }
 
-.announcement-form {
+.message-form {
   background-color: #fff;
   border-radius: 16rpx;
   padding: 30rpx;
@@ -50,7 +50,7 @@
   margin-bottom: 30rpx;
 }
 
-.announcement-input {
+.message-input {
   width: 100%;
   min-height: 300rpx;
   padding: 20rpx;
@@ -61,7 +61,7 @@
 }
 
 .submit-btn {
-  background-color: #1296db;
+  background-color: #07c160;
   color: white;
   border-radius: 8rpx;
   font-size: 32rpx;
@@ -69,6 +69,6 @@
 }
 
 .btn-hover {
-  background-color: #0f76ad;
+  background-color: #06ad56;
 }
 

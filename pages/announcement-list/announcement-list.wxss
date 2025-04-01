@@ -2,7 +2,7 @@
 
 .announcement-list-top-bar{
   height: 120px;
-  background-color: #d4237a;
+  background-color: #1296db;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -66,7 +66,7 @@
 
 .publish-btn navigator {
   background-color: #fff;
-  color: #d4237a;
+  color: #1296db;
   padding: 6px 12px;
   border-radius: 15px;
   font-size: 14px;
