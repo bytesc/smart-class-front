@@ -63,3 +63,11 @@
   top: 0; /* 图片顶部对齐框架顶部 */
   left: 0; /* 图片左侧对齐框架左侧 */
 }
+
+.my-grade-list-header {
+  font-weight: bold;
+  background-color: #f5f5f5 !important; /* 使用!important确保覆盖hover效果 */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}

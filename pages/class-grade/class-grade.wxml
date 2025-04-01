@@ -12,12 +12,19 @@
 </view>
 
   <view class="my-grade-list">
+    <view class="my-grade-list-row my-grade-list-header">
+      <view class="my-grade-list-colum">学号</view>
+      <view class="my-grade-list-colum">姓名</view>
+      <view class="my-grade-list-colum">必修平均分</view>
+      <view class="my-grade-list-colum">专业排名</view>
+    </view>
     
       <view  wx:for="{{gradeData.class_grade_list}}" wx:key="index">
         <navigator class="my-grade-list-row" url="/pages/my-grade/my-grade?uid={{item.uid}}&username={{item.username}}">
           <view class="my-grade-list-colum">{{item.stu_num}}</view>
           <view class="my-grade-list-colum">{{item.username}}</view>
           <view class="my-grade-list-colum">{{item.avg_grade}}</view>
+          <view class="my-grade-list-colum">{{item.major_rank}}</view>
         </navigator>
       </view>
     
