@@ -61,5 +61,9 @@
       <button class="logout-btn" bindtap="handleLogout">退出登录</button>
     </view>
 
+    <view class="change-pwd-button">
+      <navigator url="/pages/change-pwd/change-pwd">修改密码</navigator>
+    </view>
+
   </view>
 </view>

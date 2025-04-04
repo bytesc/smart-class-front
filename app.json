@@ -20,7 +20,8 @@
     "pages/lesson-grade/lesson-grade",
     "pages/send-message/send-message",
     "pages/send-announcement/send-announcement",
-    "pages/send-group-message/send-group-message"
+    "pages/send-group-message/send-group-message",
+    "pages/change-pwd/change-pwd"
   ],
   "window": {
     "navigationBarTextStyle": "black",
