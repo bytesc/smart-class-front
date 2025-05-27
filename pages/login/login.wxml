@@ -19,7 +19,7 @@
 
   <view class="input-group">
     <text class="label">密码：</text>
-    <input name="password" type="password" placeholder="请输入密码" />
+    <input name="password" type="password" 	password="true" placeholder="请输入密码" />
   </view>
 
   <button formType="submit">登录</button>

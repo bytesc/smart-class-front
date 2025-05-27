@@ -6,15 +6,15 @@
 <form bindsubmit="onChangePwdForm" class="changePwdForm">
   <view class="input-group">
     <text class="label">原密码：</text>
-    <input name="oldPwd" type="password" placeholder="请输入原密码" />
+    <input name="oldPwd" type="password"  	password="true"  placeholder="请输入原密码" />
   </view>
   <view class="input-group">
     <text class="label">新密码：</text>
-    <input name="newPwd" type="password" placeholder="请输入新密码" />
+    <input name="newPwd" type="password"  	password="true"  placeholder="请输入新密码" />
   </view>
   <view class="input-group">
     <text class="label">重复新密码：</text>
-    <input name="confirmNewPwd" type="password" placeholder="请重复新密码" />
+    <input name="confirmNewPwd" type="password"  	password="true"  placeholder="请重复新密码" />
   </view>
   <button formType="submit">修改</button>
 </form>
