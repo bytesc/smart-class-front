@@ -1,2 +1,11 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<!-- <text>pages/home/home.wxml</text> -->
+
+<view class="container">
+
+<view class="title-container">
+  <image class="title-image" src="/static/images/logo.jpg"></image>
+  <text class="title-text">智慧班级</text>
+</view>
+
+</view>

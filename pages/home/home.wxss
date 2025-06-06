@@ -1,1 +1,28 @@
 /* pages/home/home.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.title-image {
+  
+  width: 100px;
+  height: 100px;
+  margin-top: 100px;
+}
+
+.title-text {
+  margin-top: 50px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+}
