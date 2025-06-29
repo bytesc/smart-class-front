@@ -21,4 +21,12 @@
 const serverUrl = "http://127.0.0.1:8001/api"
 ```
 
+node 版本
+```bash
+node -v
+v18.15.0
+npm -v
+9.5.0
+```
+
 
